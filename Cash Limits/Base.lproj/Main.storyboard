@@ -102,7 +102,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6IJ-9V-PKB" customClass="CustomProgressView" customModule="Cash_Limits" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="48.5" width="155" height="11"/>
+                                                    <rect key="frame" x="8" y="38.5" width="155" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="10" id="4Nx-hN-tsE"/>
                                                     </constraints>
@@ -110,27 +110,38 @@
                                                     <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jas-72-b86">
-                                                    <rect key="frame" x="8" y="66.5" width="155" height="18"/>
+                                                    <rect key="frame" x="8" y="51.5" width="155" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpV-rl-R4G">
+                                                    <rect key="frame" x="16" y="125" width="139" height="30"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Add Expense">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6IJ-9V-PKB" firstAttribute="top" secondItem="1W3-T1-JqT" secondAttribute="bottom" constant="20" id="269-vc-6EX"/>
+                                                <constraint firstItem="6IJ-9V-PKB" firstAttribute="top" secondItem="1W3-T1-JqT" secondAttribute="bottom" constant="10" id="269-vc-6EX"/>
                                                 <constraint firstItem="1W3-T1-JqT" firstAttribute="top" secondItem="aIF-VE-IiH" secondAttribute="top" constant="8" id="Aj2-QP-2MO"/>
+                                                <constraint firstAttribute="bottom" secondItem="vpV-rl-R4G" secondAttribute="bottom" constant="16" id="BSf-5S-7ZE"/>
+                                                <constraint firstAttribute="trailing" secondItem="vpV-rl-R4G" secondAttribute="trailing" constant="16" id="FFm-a3-GEe"/>
                                                 <constraint firstAttribute="trailing" secondItem="1W3-T1-JqT" secondAttribute="trailing" constant="8" id="QUl-Qr-Y46"/>
-                                                <constraint firstItem="Jas-72-b86" firstAttribute="top" secondItem="6IJ-9V-PKB" secondAttribute="bottom" constant="8" id="R3z-pw-b9g"/>
+                                                <constraint firstItem="Jas-72-b86" firstAttribute="top" secondItem="6IJ-9V-PKB" secondAttribute="bottom" constant="3" id="R3z-pw-b9g"/>
                                                 <constraint firstItem="Jas-72-b86" firstAttribute="leading" secondItem="aIF-VE-IiH" secondAttribute="leading" constant="8" id="XnG-gO-8L8"/>
                                                 <constraint firstItem="6IJ-9V-PKB" firstAttribute="leading" secondItem="aIF-VE-IiH" secondAttribute="leading" constant="8" id="Ydf-rv-LCQ"/>
+                                                <constraint firstItem="vpV-rl-R4G" firstAttribute="leading" secondItem="aIF-VE-IiH" secondAttribute="leading" constant="16" id="b4C-Bh-c53"/>
                                                 <constraint firstAttribute="trailing" secondItem="6IJ-9V-PKB" secondAttribute="trailing" constant="8" id="nVr-Tt-Hig"/>
                                                 <constraint firstAttribute="trailing" secondItem="Jas-72-b86" secondAttribute="trailing" constant="8" id="uZ3-9N-bR9"/>
                                                 <constraint firstItem="1W3-T1-JqT" firstAttribute="leading" secondItem="aIF-VE-IiH" secondAttribute="leading" constant="8" id="xzZ-nF-q9Q"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="171" height="171"/>
                                         <connections>
+                                            <outlet property="addExpenseButton" destination="vpV-rl-R4G" id="h5p-zn-q2B"/>
                                             <outlet property="customProgressView" destination="6IJ-9V-PKB" id="yEL-iP-WMd"/>
                                             <outlet property="percentageLabel" destination="Jas-72-b86" id="zmy-sj-Woh"/>
                                         </connections>
@@ -154,8 +165,11 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5aO-7m-ZcW"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="balanceButton" destination="d8W-dd-AR8" id="3NA-Fv-GQj"/>
                         <outlet property="categoryCollectionView" destination="IwZ-4p-gza" id="JDE-aC-Jei"/>
                         <outlet property="flowLayout" destination="lXQ-o4-gBq" id="aOz-h1-PBG"/>
+                        <outlet property="incomeButton" destination="8iv-ow-BmS" id="bCf-VU-Wa8"/>
+                        <outlet property="spentButton" destination="W42-qh-wU5" id="UFB-0Z-Jtx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

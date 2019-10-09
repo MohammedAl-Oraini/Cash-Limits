@@ -14,8 +14,9 @@ class FirstViewController: UIViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    //@IBOutlet weak var customProgressView: CustomProgressView!
-
+    @IBOutlet weak var incomeButton: UIButton!
+    @IBOutlet weak var spentButton: UIButton!
+    @IBOutlet weak var balanceButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +26,13 @@ class FirstViewController: UIViewController {
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         setupFlowLayout()
-       // customProgressView.progressImage = UIImage.gradientImage(with: customProgressView.frame, colors: [UIColor.red.cgColor, UIColor.green.cgColor], locations: nil)
-        // Do any additional setup after loading the view.
+        setupView()
+    }
+    
+    func setupView() {
+        incomeButton.layer.cornerRadius = 15
+        spentButton.layer.cornerRadius = 15
+        balanceButton.layer.cornerRadius = 15
     }
     
     func setupFlowLayout() {
@@ -63,7 +69,9 @@ extension FirstViewController : UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
         cell.layer.cornerRadius = 15
-        cell.customProgressView.progressImage = UIImage.gradientImage(with: cell.customProgressView.frame, colors: [UIColor.red.cgColor, UIColor.green.cgColor], locations: nil)
+        cell.addExpenseButton.layer.cornerRadius = 15
+        //cell.customProgressView.progressImage = UIImage.gradientImage(with: cell.customProgressView.frame, colors: [UIColor.green.cgColor, UIColor.red.cgColor], locations: nil)
+        //cell.customProgressView.trackImage = UIImage.gradientImage(with: cell.customProgressView.frame, colors: [UIColor.green.cgColor, UIColor.red.cgColor], locations: nil)
         
         if indexPath.row == 0 {
             cell.customProgressView.progress = 0.7
@@ -71,6 +79,17 @@ extension FirstViewController : UICollectionViewDelegate,UICollectionViewDataSou
         
         if indexPath.row == 2 {
             cell.customProgressView.progress = 0.2
+        }
+        
+        if indexPath.row == 3 {
+            cell.customProgressView.progress = 0.9
+        }
+        
+        if cell.customProgressView.progress > 0.5 && cell.customProgressView.progress < 0.75 {
+            cell.customProgressView.progressTintColor = .orange
+        }
+        if cell.customProgressView.progress >= 0.75 {
+            cell.customProgressView.progressTintColor = .red
         }
         
         let percentage = cell.customProgressView.progress

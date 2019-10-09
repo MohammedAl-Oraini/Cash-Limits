@@ -12,7 +12,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var customProgressView: CustomProgressView!
     @IBOutlet weak var percentageLabel: UILabel!
-    
+    @IBOutlet weak var addExpenseButton: UIButton!
     
     
 }
