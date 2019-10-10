@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4iB-nH-jo9">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="eC0-ci-H4P">
+            <objects>
+                <viewController id="4iB-nH-jo9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6lX-LT-uCC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Forth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rbk-9k-oZM">
+                                <rect key="frame" x="125" y="426.5" width="164.5" height="43"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7M-Nz-raF">
+                                <rect key="frame" x="110" y="477.5" width="194.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="e7M-Nz-raF" firstAttribute="top" secondItem="Rbk-9k-oZM" secondAttribute="bottom" constant="8" symbolic="YES" id="Hr1-4f-6NL"/>
+                            <constraint firstAttribute="centerY" secondItem="Rbk-9k-oZM" secondAttribute="centerY" id="chO-DR-SVn"/>
+                            <constraint firstItem="e7M-Nz-raF" firstAttribute="centerX" secondItem="Rbk-9k-oZM" secondAttribute="centerX" id="gWy-Cp-SSp"/>
+                            <constraint firstAttribute="centerX" secondItem="Rbk-9k-oZM" secondAttribute="centerX" id="jz0-ke-ri1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kQe-F7-eMe"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="c3M-sp-QDG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggC-Lm-3PY" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1518.840579710145" y="-463.39285714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gear" catalog="system" width="64" height="60"/>
+    </resources>
+</document>

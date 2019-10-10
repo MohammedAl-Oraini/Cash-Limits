@@ -33,6 +33,7 @@ class FirstViewController: UIViewController {
         incomeButton.layer.cornerRadius = 15
         spentButton.layer.cornerRadius = 15
         balanceButton.layer.cornerRadius = 15
+        //categoryCollectionView.bounds = CGRect(x: 0, y: 0, width: categoryCollectionView.bounds.width, height: categoryCollectionView.bounds.height)
     }
     
     func setupFlowLayout() {
@@ -69,6 +70,13 @@ extension FirstViewController : UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
         cell.layer.cornerRadius = 15
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.red.cgColor
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowRadius = 5
+        cell.layer.shadowOpacity = 1
+        cell.layer.masksToBounds = false
         cell.addExpenseButton.layer.cornerRadius = 15
         //cell.customProgressView.progressImage = UIImage.gradientImage(with: cell.customProgressView.frame, colors: [UIColor.green.cgColor, UIColor.red.cgColor], locations: nil)
         //cell.customProgressView.trackImage = UIImage.gradientImage(with: cell.customProgressView.frame, colors: [UIColor.green.cgColor, UIColor.red.cgColor], locations: nil)
