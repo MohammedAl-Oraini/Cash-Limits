@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aSd-gF-u9b">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Graphs-->
+        <scene sceneID="xko-Uu-vZ7">
+            <objects>
+                <viewController id="aSd-gF-u9b" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LtM-pI-TnB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Third View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="AKI-h5-diK">
+                                <rect key="frame" x="125.5" y="426.5" width="163.5" height="43"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qag-Ib-bX3">
+                                <rect key="frame" x="110" y="477.5" width="194.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Qag-Ib-bX3" firstAttribute="top" secondItem="AKI-h5-diK" secondAttribute="bottom" constant="8" symbolic="YES" id="Hn4-cJ-1hB"/>
+                            <constraint firstAttribute="centerY" secondItem="AKI-h5-diK" secondAttribute="centerY" id="XaS-Gi-ct2"/>
+                            <constraint firstAttribute="centerX" secondItem="AKI-h5-diK" secondAttribute="centerX" id="dEx-BZ-ph3"/>
+                            <constraint firstItem="Qag-Ib-bX3" firstAttribute="centerX" secondItem="AKI-h5-diK" secondAttribute="centerX" id="tv6-DD-ic8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="50H-qv-4X4"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Graphs" image="chart.pie.fill" catalog="system" id="YGg-hp-BZF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6Y-yK-wG3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="579.71014492753625" y="-370.3125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chart.pie.fill" catalog="system" width="64" height="62"/>
+    </resources>
+</document>
