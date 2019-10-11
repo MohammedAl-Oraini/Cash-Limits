@@ -40,7 +40,7 @@ class FirstViewController: UIViewController {
         
         let numberOfItemPerRow:CGFloat = 2
         let space:CGFloat = 10.0
-        let width = (categoryCollectionView.frame.width - (numberOfItemPerRow - 1) * space) / numberOfItemPerRow
+        let width = ((categoryCollectionView.frame.width - (numberOfItemPerRow - 1) * space) / numberOfItemPerRow) - 20
         let height = width
         
         flowLayout.minimumInteritemSpacing = space
