@@ -13,7 +13,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var customProgressView: CustomProgressView!
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var addExpenseButton: UIButton!
-
+    @IBOutlet weak var cellView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame )
@@ -37,7 +37,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
                lpgr.minimumPressDuration = 0.08
                lpgr.delaysTouchesBegan = false
-               contentView.addGestureRecognizer(lpgr)
+               cellView.addGestureRecognizer(lpgr)
         
     }
     
@@ -45,10 +45,13 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         super.init(coder: coder)
         //fatalError("init(coder:) has not been implemented")
     }
+    @IBAction func addButtonTapped(_ sender: UIButton) {
+        print("button Tapped")
+    }
     
     @objc func handleLongPress(gesture : UILongPressGestureRecognizer!) {
            print("raw value : \(gesture.state.rawValue)")
-           if gesture.state.rawValue == 2 {
+           if gesture.state.rawValue == 2 || gesture.state.rawValue == 1 {
                highlight(true)
            }else{
                highlight(false)
