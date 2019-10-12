@@ -21,6 +21,8 @@
 		114EC763234F3E2200E5CA39 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114EC761234F3E2200E5CA39 /* History.storyboard */; };
 		114EC765234F3E4600E5CA39 /* Graphs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114EC764234F3E4600E5CA39 /* Graphs.storyboard */; };
 		114EC768234F3E6900E5CA39 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114EC766234F3E6900E5CA39 /* Settings.storyboard */; };
+		11546F0623521CF600D515B5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11546F0523521CF600D515B5 /* Category.swift */; };
+		11546F0923523C4300D515B5 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11546F0823523C4300D515B5 /* AddCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		114EC762234F3E2200E5CA39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Cash Limits/Storyboards/Base.lproj/History.storyboard"; sourceTree = "<group>"; };
 		114EC764234F3E4600E5CA39 /* Graphs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Graphs.storyboard; sourceTree = "<group>"; };
 		114EC767234F3E6900E5CA39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Cash Limits/Storyboards/Base.lproj/Settings.storyboard"; sourceTree = "<group>"; };
+		11546F0523521CF600D515B5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		11546F0823523C4300D515B5 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,17 +76,16 @@
 		11216E15234CC2A2002FD82E /* Cash Limits */ = {
 			isa = PBXGroup;
 			children = (
+				11546F0723523BEF00D515B5 /* Controller */,
+				11546F0423521BF800D515B5 /* Model */,
 				114EC75D234F3CEC00E5CA39 /* Storyboards */,
 				11216E16234CC2A2002FD82E /* AppDelegate.swift */,
 				11216E18234CC2A2002FD82E /* SceneDelegate.swift */,
-				11216E1A234CC2A2002FD82E /* FirstViewController.swift */,
-				11216E1C234CC2A2002FD82E /* SecondViewController.swift */,
 				1107ED4F234D1A51008F8FC6 /* CategoryCollectionViewCell.swift */,
 				1107ED4D234CFF53008F8FC6 /* CustomProgressView.swift */,
 				11216E24234CC2B3002FD82E /* Assets.xcassets */,
 				11216E26234CC2B3002FD82E /* LaunchScreen.storyboard */,
 				11216E29234CC2B3002FD82E /* Info.plist */,
-				11216E21234CC2A2002FD82E /* Cash_Limits.xcdatamodeld */,
 			);
 			path = "Cash Limits";
 			sourceTree = "<group>";
@@ -97,6 +100,25 @@
 				114EC766234F3E6900E5CA39 /* Settings.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		11546F0423521BF800D515B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11216E21234CC2A2002FD82E /* Cash_Limits.xcdatamodeld */,
+				11546F0523521CF600D515B5 /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11546F0723523BEF00D515B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11216E1A234CC2A2002FD82E /* FirstViewController.swift */,
+				11216E1C234CC2A2002FD82E /* SecondViewController.swift */,
+				11546F0823523C4300D515B5 /* AddCategoryViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,11 +198,13 @@
 			files = (
 				11216E1D234CC2A2002FD82E /* SecondViewController.swift in Sources */,
 				1107ED4E234CFF53008F8FC6 /* CustomProgressView.swift in Sources */,
+				11546F0923523C4300D515B5 /* AddCategoryViewController.swift in Sources */,
 				11216E23234CC2A2002FD82E /* Cash_Limits.xcdatamodeld in Sources */,
 				11216E1B234CC2A2002FD82E /* FirstViewController.swift in Sources */,
 				11216E17234CC2A2002FD82E /* AppDelegate.swift in Sources */,
 				1107ED50234D1A51008F8FC6 /* CategoryCollectionViewCell.swift in Sources */,
 				11216E19234CC2A2002FD82E /* SceneDelegate.swift in Sources */,
+				11546F0623521CF600D515B5 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
