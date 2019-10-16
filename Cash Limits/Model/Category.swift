@@ -14,7 +14,7 @@ class Category: NSManagedObject {
     //MARK: - helper methods
     
     
-    class func saveCategory(name:String,limit:Decimal,container: NSPersistentContainer?){
+    class func saveCategory(name:String,limit:Decimal,container: NSPersistentContainer?) -> Category?{
         if let container = container {
             print("is main thread ? \(Thread.isMainThread)")
             let newCategory = Category(context: container.viewContext)
@@ -22,10 +22,11 @@ class Category: NSManagedObject {
             newCategory.limit = limit as NSDecimalNumber
             try? container.viewContext.save()
             print("new Category saved")
+            return newCategory
         } else {
             print("category was not saved")
+            return nil
         }
-        
     }
     
     class func loadCategories(container: NSPersistentContainer?) -> [Category]{

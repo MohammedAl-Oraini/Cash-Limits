@@ -10,6 +10,7 @@ import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var customProgressView: CustomProgressView!
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var addExpenseButton: UIButton!
@@ -34,6 +35,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setupCell()
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
                lpgr.minimumPressDuration = 0.08
                lpgr.delaysTouchesBegan = false
@@ -47,6 +49,18 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
     @IBAction func addButtonTapped(_ sender: UIButton) {
         print("button Tapped")
+    }
+    
+    func setupCell() {
+        layer.cornerRadius = 15
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.red.cgColor
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 1
+        layer.masksToBounds = false
+        addExpenseButton.layer.cornerRadius = 15
     }
     
     @objc func handleLongPress(gesture : UILongPressGestureRecognizer!) {
