@@ -23,6 +23,7 @@
 		114EC768234F3E6900E5CA39 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114EC766234F3E6900E5CA39 /* Settings.storyboard */; };
 		11546F0623521CF600D515B5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11546F0523521CF600D515B5 /* Category.swift */; };
 		11546F0923523C4300D515B5 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11546F0823523C4300D515B5 /* AddCategoryViewController.swift */; };
+		11C6DD482370630D0035644D /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6DD472370630D0035644D /* Expense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		114EC767234F3E6900E5CA39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Cash Limits/Storyboards/Base.lproj/Settings.storyboard"; sourceTree = "<group>"; };
 		11546F0523521CF600D515B5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		11546F0823523C4300D515B5 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		11C6DD472370630D0035644D /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				11216E21234CC2A2002FD82E /* Cash_Limits.xcdatamodeld */,
 				11546F0523521CF600D515B5 /* Category.swift */,
+				11C6DD472370630D0035644D /* Expense.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				1107ED4E234CFF53008F8FC6 /* CustomProgressView.swift in Sources */,
 				11546F0923523C4300D515B5 /* AddCategoryViewController.swift in Sources */,
 				11216E23234CC2A2002FD82E /* Cash_Limits.xcdatamodeld in Sources */,
+				11C6DD482370630D0035644D /* Expense.swift in Sources */,
 				11216E1B234CC2A2002FD82E /* FirstViewController.swift in Sources */,
 				11216E17234CC2A2002FD82E /* AppDelegate.swift in Sources */,
 				1107ED50234D1A51008F8FC6 /* CategoryCollectionViewCell.swift in Sources */,

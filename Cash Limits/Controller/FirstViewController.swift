@@ -95,6 +95,7 @@ extension FirstViewController : UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
         cell.categoryName.text = categoryCollection[indexPath.row].name
+        cell.limitLabel.text = "Limit: \(categoryCollection[indexPath.row].limit ?? 0) SAR"
 //        cell.layer.cornerRadius = 15
 //        cell.layer.borderWidth = 1
 //        cell.layer.borderColor = UIColor.red.cgColor
@@ -139,10 +140,10 @@ extension FirstViewController : UICollectionViewDelegate,UICollectionViewDataSou
         if segue.identifier == "addCategorySegue" {
             if let vc = segue.destination as? AddCategoryViewController {
                 vc.container = container
-                vc.addedCategory = { category in
+                vc.addedCategory = {[weak self] category in
                     if let category = category {
-                        self.categoryCollection.append(category)
-                        self.categoryCollectionView.reloadData()
+                        self?.categoryCollection.append(category)
+                        self?.categoryCollectionView.reloadData()
                     }
                 }
             }

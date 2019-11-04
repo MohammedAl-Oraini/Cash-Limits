@@ -13,6 +13,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var customProgressView: CustomProgressView!
     @IBOutlet weak var percentageLabel: UILabel!
+    @IBOutlet weak var spentLabel: UILabel!
+    @IBOutlet weak var limitLabel: UILabel!
     @IBOutlet weak var addExpenseButton: UIButton!
     @IBOutlet weak var cellView: UIView!
     
@@ -80,7 +82,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
                        initialSpringVelocity: 5.0,
                        options: [.allowUserInteraction],
                        animations: {
-                        self.transform = touched ? .init(scaleX: 0.80, y: 0.80) : .identity
+                        self.transform = touched ? .init(scaleX: 0.95, y: 0.95) : .identity
         }, completion: nil)
     }
 }
