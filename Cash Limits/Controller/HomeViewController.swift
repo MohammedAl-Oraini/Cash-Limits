@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  HomeViewController.swift
 //  Cash Limits
 //
 //  Created by Mohammad Al-Oraini on 08/10/2019.
@@ -11,7 +11,7 @@ import CoreData
 
 private let reuseIdentifier = "Cell"
 
-class FirstViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     //MARK: - Core Data Persistent Container
     
@@ -81,7 +81,7 @@ class FirstViewController: UIViewController {
 
 }
 
-extension FirstViewController : UICollectionViewDelegate,UICollectionViewDataSource {
+extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

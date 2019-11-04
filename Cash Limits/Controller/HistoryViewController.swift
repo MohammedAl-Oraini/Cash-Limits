@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  HistoryViewController.swift
 //  Cash Limits
 //
 //  Created by Mohammad Al-Oraini on 08/10/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class HistoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,8 +11,8 @@
 		1107ED50234D1A51008F8FC6 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1107ED4F234D1A51008F8FC6 /* CategoryCollectionViewCell.swift */; };
 		11216E17234CC2A2002FD82E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11216E16234CC2A2002FD82E /* AppDelegate.swift */; };
 		11216E19234CC2A2002FD82E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11216E18234CC2A2002FD82E /* SceneDelegate.swift */; };
-		11216E1B234CC2A2002FD82E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11216E1A234CC2A2002FD82E /* FirstViewController.swift */; };
-		11216E1D234CC2A2002FD82E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11216E1C234CC2A2002FD82E /* SecondViewController.swift */; };
+		11216E1B234CC2A2002FD82E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11216E1A234CC2A2002FD82E /* HomeViewController.swift */; };
+		11216E1D234CC2A2002FD82E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11216E1C234CC2A2002FD82E /* HistoryViewController.swift */; };
 		11216E20234CC2A2002FD82E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11216E1E234CC2A2002FD82E /* Main.storyboard */; };
 		11216E23234CC2A2002FD82E /* Cash_Limits.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11216E21234CC2A2002FD82E /* Cash_Limits.xcdatamodeld */; };
 		11216E25234CC2B3002FD82E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11216E24234CC2B3002FD82E /* Assets.xcassets */; };
@@ -32,8 +32,8 @@
 		11216E13234CC2A2002FD82E /* Cash Limits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cash Limits.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11216E16234CC2A2002FD82E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11216E18234CC2A2002FD82E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		11216E1A234CC2A2002FD82E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		11216E1C234CC2A2002FD82E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		11216E1A234CC2A2002FD82E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		11216E1C234CC2A2002FD82E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		11216E1F234CC2A2002FD82E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11216E22234CC2A2002FD82E /* Cash_Limits.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cash_Limits.xcdatamodel; sourceTree = "<group>"; };
 		11216E24234CC2B3002FD82E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,8 +117,8 @@
 		11546F0723523BEF00D515B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				11216E1A234CC2A2002FD82E /* FirstViewController.swift */,
-				11216E1C234CC2A2002FD82E /* SecondViewController.swift */,
+				11216E1A234CC2A2002FD82E /* HomeViewController.swift */,
+				11216E1C234CC2A2002FD82E /* HistoryViewController.swift */,
 				11546F0823523C4300D515B5 /* AddCategoryViewController.swift */,
 			);
 			path = Controller;
@@ -199,12 +199,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11216E1D234CC2A2002FD82E /* SecondViewController.swift in Sources */,
+				11216E1D234CC2A2002FD82E /* HistoryViewController.swift in Sources */,
 				1107ED4E234CFF53008F8FC6 /* CustomProgressView.swift in Sources */,
 				11546F0923523C4300D515B5 /* AddCategoryViewController.swift in Sources */,
 				11216E23234CC2A2002FD82E /* Cash_Limits.xcdatamodeld in Sources */,
 				11C6DD482370630D0035644D /* Expense.swift in Sources */,
-				11216E1B234CC2A2002FD82E /* FirstViewController.swift in Sources */,
+				11216E1B234CC2A2002FD82E /* HomeViewController.swift in Sources */,
 				11216E17234CC2A2002FD82E /* AppDelegate.swift in Sources */,
 				1107ED50234D1A51008F8FC6 /* CategoryCollectionViewCell.swift in Sources */,
 				11216E19234CC2A2002FD82E /* SceneDelegate.swift in Sources */,
@@ -309,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -364,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
