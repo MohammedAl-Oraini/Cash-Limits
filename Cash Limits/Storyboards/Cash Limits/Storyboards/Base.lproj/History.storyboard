@@ -3,38 +3,10 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--History-->
-        <scene sceneID="bZJ-cn-gym">
-            <objects>
-                <tableViewController id="mdX-Z9-9Y5" customClass="HistoryViewController" customModule="Cash_Limits" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zWD-PS-149">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="80" id="xS2-xf-hYC" customClass="HistoryTableViewCell" customModule="Cash_Limits" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xS2-xf-hYC" id="aIa-LA-YvW">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="mdX-Z9-9Y5" id="MtS-t6-U6N"/>
-                            <outlet property="delegate" destination="mdX-Z9-9Y5" id="5h9-xs-QEm"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="History" id="J9o-In-29p"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zdu-x8-Y8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="524.63768115942037" y="-536.38392857142856"/>
-        </scene>
         <!--History-->
         <scene sceneID="MZo-JL-GuQ">
             <objects>
@@ -47,12 +19,130 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mdX-Z9-9Y5" kind="relationship" relationship="rootViewController" id="Kqm-S2-8Kf"/>
+                        <segue destination="iR6-r5-qtf" kind="relationship" relationship="rootViewController" id="nhC-Zj-ArN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgD-Qq-Udj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-439.13043478260875" y="-536.38392857142856"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="wu2-x0-SUo">
+            <objects>
+                <viewController id="iR6-r5-qtf" customClass="HistoryViewController" customModule="Cash_Limits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O3a-oZ-Pe2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="W3h-WK-rNj">
+                                <rect key="frame" x="32" y="98" width="350" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="phb-VN-80i"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rea-R6-Nfm">
+                                <rect key="frame" x="0.0" y="139" width="414" height="757"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell1" rowHeight="100" id="z6Q-W2-13t" customClass="HistoryTableViewCell" customModule="Cash_Limits" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z6Q-W2-13t" id="BhG-vh-ncV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="VjE-FH-5cv">
+                                                    <rect key="frame" x="36" y="11" width="342" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUe-Vk-AGt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nng-DV-6FC">
+                                                            <rect key="frame" x="146.5" y="0.0" width="49" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-X1-aLQ">
+                                                            <rect key="frame" x="293.5" y="0.0" width="48.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="v76-ap-JLm">
+                                                    <rect key="frame" x="36" y="39.5" width="342" height="41.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nk-IB-RL3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="92.5" height="41.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZME-OU-xSm">
+                                                            <rect key="frame" x="242.5" y="0.0" width="99.5" height="41.5"/>
+                                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VjE-FH-5cv" firstAttribute="leading" secondItem="BhG-vh-ncV" secondAttribute="leadingMargin" constant="16" id="3Y4-up-3fs"/>
+                                                <constraint firstItem="v76-ap-JLm" firstAttribute="leading" secondItem="BhG-vh-ncV" secondAttribute="leadingMargin" constant="16" id="5np-VB-7SX"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="v76-ap-JLm" secondAttribute="bottom" constant="8" id="W66-Ok-tCt"/>
+                                                <constraint firstItem="VjE-FH-5cv" firstAttribute="top" secondItem="BhG-vh-ncV" secondAttribute="topMargin" id="c8K-p9-dgh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VjE-FH-5cv" secondAttribute="trailing" constant="16" id="oqO-cs-Qyu"/>
+                                                <constraint firstItem="v76-ap-JLm" firstAttribute="top" secondItem="VjE-FH-5cv" secondAttribute="bottom" constant="8" id="pvl-tM-50O"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="v76-ap-JLm" secondAttribute="trailing" constant="16" id="zXp-bE-LFV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryLabel" destination="ZME-OU-xSm" id="k7u-UU-Gcg"/>
+                                            <outlet property="dateLabel" destination="sUe-Vk-AGt" id="TE6-LE-3IY"/>
+                                            <outlet property="dayLabel" destination="nng-DV-6FC" id="nOj-kF-N1s"/>
+                                            <outlet property="expenseAmount" destination="5nk-IB-RL3" id="JNz-Tb-UnO"/>
+                                            <outlet property="timeLabel" destination="xMt-X1-aLQ" id="ATS-dJ-Wfm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iR6-r5-qtf" id="Vyd-sk-dkG"/>
+                                    <outlet property="delegate" destination="iR6-r5-qtf" id="ns8-i5-ea0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="W3h-WK-rNj" firstAttribute="top" secondItem="6yF-Xr-TLL" secondAttribute="top" constant="10" id="2Hd-w3-pxb"/>
+                            <constraint firstItem="6yF-Xr-TLL" firstAttribute="trailing" secondItem="W3h-WK-rNj" secondAttribute="trailing" constant="32" id="AXS-HZ-hmk"/>
+                            <constraint firstAttribute="bottom" secondItem="rea-R6-Nfm" secondAttribute="bottom" id="KNH-Gy-MwK"/>
+                            <constraint firstItem="W3h-WK-rNj" firstAttribute="leading" secondItem="6yF-Xr-TLL" secondAttribute="leading" constant="32" id="QOH-Fl-s6x"/>
+                            <constraint firstItem="rea-R6-Nfm" firstAttribute="top" secondItem="W3h-WK-rNj" secondAttribute="bottom" constant="10" id="TUI-sX-cml"/>
+                            <constraint firstItem="rea-R6-Nfm" firstAttribute="trailing" secondItem="6yF-Xr-TLL" secondAttribute="trailing" id="bfC-ct-QJo"/>
+                            <constraint firstItem="rea-R6-Nfm" firstAttribute="leading" secondItem="6yF-Xr-TLL" secondAttribute="leading" id="uUw-XV-HPY"/>
+                            <constraint firstItem="rea-R6-Nfm" firstAttribute="top" secondItem="W3h-WK-rNj" secondAttribute="bottom" constant="10" id="z4J-qf-7F7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6yF-Xr-TLL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8bW-vT-gyj"/>
+                    <connections>
+                        <outlet property="historyTableView" destination="rea-R6-Nfm" id="tX8-eD-akz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6E-ov-Gde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305.79710144927537" y="-536.38392857142856"/>
         </scene>
     </scenes>
     <resources>

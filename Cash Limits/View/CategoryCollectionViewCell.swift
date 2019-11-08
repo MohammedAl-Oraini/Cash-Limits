@@ -18,6 +18,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addExpenseButton: UIButton!
     @IBOutlet weak var cellView: UIView!
     
+    weak var delegate: CategoryCollectionViewCellDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame )
         
@@ -51,8 +53,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
     @IBAction func addButtonTapped(_ sender: UIButton) {
         print("button Tapped")
+        delegate?.didTapAddExpence(name: categoryName.text!)
     }
-    
     func setupCell() {
         layer.cornerRadius = 15
         layer.borderWidth = 1

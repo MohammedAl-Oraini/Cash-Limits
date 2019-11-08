@@ -23,6 +23,7 @@
 		114EC768234F3E6900E5CA39 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114EC766234F3E6900E5CA39 /* Settings.storyboard */; };
 		11546F0623521CF600D515B5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11546F0523521CF600D515B5 /* Category.swift */; };
 		11546F0923523C4300D515B5 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11546F0823523C4300D515B5 /* AddCategoryViewController.swift */; };
+		1185843C23759DDD001ACD72 /* CategoryCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1185843B23759DDD001ACD72 /* CategoryCollectionViewCellDelegate.swift */; };
 		11C6DD482370630D0035644D /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6DD472370630D0035644D /* Expense.swift */; };
 		11C6DD4B237068740035644D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6DD4A237068740035644D /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		114EC767234F3E6900E5CA39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Cash Limits/Storyboards/Base.lproj/Settings.storyboard"; sourceTree = "<group>"; };
 		11546F0523521CF600D515B5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		11546F0823523C4300D515B5 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		1185843B23759DDD001ACD72 /* CategoryCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
 		11C6DD472370630D0035644D /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		11C6DD4A237068740035644D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				1107ED4F234D1A51008F8FC6 /* CategoryCollectionViewCell.swift */,
 				11C6DD4A237068740035644D /* HistoryTableViewCell.swift */,
 				1107ED4D234CFF53008F8FC6 /* CustomProgressView.swift */,
+				1185843B23759DDD001ACD72 /* CategoryCollectionViewCellDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				11C6DD4B237068740035644D /* HistoryTableViewCell.swift in Sources */,
 				11216E19234CC2A2002FD82E /* SceneDelegate.swift in Sources */,
 				11546F0623521CF600D515B5 /* Category.swift in Sources */,
+				1185843C23759DDD001ACD72 /* CategoryCollectionViewCellDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

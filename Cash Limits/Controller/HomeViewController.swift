@@ -78,6 +78,24 @@ class HomeViewController: UIViewController {
         }
         categoryCollectionView.reloadData()
     }
+    
+    //MARK: - prepare for segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addCategorySegue" {
+            if let vc = segue.destination as? AddCategoryViewController {
+                vc.container = container
+                vc.addedCategory = {[weak self] category in
+                    if let category = category {
+                        self?.categoryCollection.append(category)
+                        self?.categoryCollectionView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    
 
 }
 
@@ -96,6 +114,7 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
         cell.categoryName.text = categoryCollection[indexPath.row].name
         cell.limitLabel.text = "Limit: \(categoryCollection[indexPath.row].limit ?? 0) SAR"
+        cell.delegate = self
 //        cell.layer.cornerRadius = 15
 //        cell.layer.borderWidth = 1
 //        cell.layer.borderColor = UIColor.red.cgColor
@@ -133,25 +152,12 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
         
         return cell
     }
-    
-    //MARK: - prepare for segue
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addCategorySegue" {
-            if let vc = segue.destination as? AddCategoryViewController {
-                vc.container = container
-                vc.addedCategory = {[weak self] category in
-                    if let category = category {
-                        self?.categoryCollection.append(category)
-                        self?.categoryCollectionView.reloadData()
-                    }
-                }
-            }
-        }
+}
+
+extension HomeViewController : CategoryCollectionViewCellDelegate {
+    func didTapAddExpence(name: String) {
+        print(name)
     }
-    
-    
-    
 }
 
 //fileprivate extension UIImage {
