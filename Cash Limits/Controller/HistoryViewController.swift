@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class HistoryViewController: UIViewController {
 
+    //MARK: - Core Data Persistent Container
+    
+    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    
     @IBOutlet weak var historyTableView: UITableView!
     
     let c = [1,2,3,4]
+    var expensesCollection:[Expense] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +28,20 @@ class HistoryViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        historyTableView.reloadData()
+        loadExpenses()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        expensesCollection.removeAll()
+    }
+    
+    func loadExpenses() {
+          for expense in Expense.loadExpenses(container:container) {
+              expensesCollection.append(expense)
+          }
+          historyTableView.reloadData()
+      }
 
 }
 
@@ -34,13 +52,14 @@ extension HistoryViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return c.count
+        return expensesCollection.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell1", for: indexPath) as! HistoryTableViewCell
-        cell.expenseAmount.text = "\(c[indexPath.row])"
-        cell.backgroundColor = .red
+        cell.expenseAmount.text = "\(expensesCollection[indexPath.row].amount!) SAR"
+        cell.categoryLabel.text = "\(expensesCollection[indexPath.row].expenceCategory!.name!)"
+        cell.dateLabel.text = "\(expensesCollection[indexPath.row].date!)"
         
         return cell
     }

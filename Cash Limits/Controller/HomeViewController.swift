@@ -92,6 +92,10 @@ class HomeViewController: UIViewController {
                     }
                 }
             }
+        } else if segue.identifier == "addExpenseSegueIdentifier" {
+            if let vc = segue.destination as? AddExpenseViewController {
+                vc.container = container
+            }
         }
     }
     
@@ -157,6 +161,9 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
 extension HomeViewController : CategoryCollectionViewCellDelegate {
     func didTapAddExpence(name: String) {
         print(name)
+        AddExpenseViewController.categoryName = name
+        performSegue(withIdentifier: "addExpenseSegueIdentifier", sender: nil)
+        //Expense.addExpense(container: container, name: name)
     }
 }
 

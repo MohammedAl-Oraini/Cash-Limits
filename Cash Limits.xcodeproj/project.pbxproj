@@ -17,6 +17,7 @@
 		11216E23234CC2A2002FD82E /* Cash_Limits.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11216E21234CC2A2002FD82E /* Cash_Limits.xcdatamodeld */; };
 		11216E25234CC2B3002FD82E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11216E24234CC2B3002FD82E /* Assets.xcassets */; };
 		11216E28234CC2B3002FD82E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11216E26234CC2B3002FD82E /* LaunchScreen.storyboard */; };
+		114E3CFF2375AC7300B4F261 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114E3CFE2375AC7300B4F261 /* AddExpenseViewController.swift */; };
 		114EC760234F3D6B00E5CA39 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114EC75E234F3D6B00E5CA39 /* Home.storyboard */; };
 		114EC763234F3E2200E5CA39 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114EC761234F3E2200E5CA39 /* History.storyboard */; };
 		114EC765234F3E4600E5CA39 /* Graphs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114EC764234F3E4600E5CA39 /* Graphs.storyboard */; };
@@ -41,6 +42,7 @@
 		11216E24234CC2B3002FD82E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11216E27234CC2B3002FD82E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11216E29234CC2B3002FD82E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		114E3CFE2375AC7300B4F261 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		114EC75F234F3D6B00E5CA39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Cash Limits/Base.lproj/Home.storyboard"; sourceTree = "<group>"; };
 		114EC762234F3E2200E5CA39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Cash Limits/Storyboards/Base.lproj/History.storyboard"; sourceTree = "<group>"; };
 		114EC764234F3E4600E5CA39 /* Graphs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Graphs.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				11216E1A234CC2A2002FD82E /* HomeViewController.swift */,
 				11216E1C234CC2A2002FD82E /* HistoryViewController.swift */,
 				11546F0823523C4300D515B5 /* AddCategoryViewController.swift */,
+				114E3CFE2375AC7300B4F261 /* AddExpenseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				11216E1D234CC2A2002FD82E /* HistoryViewController.swift in Sources */,
 				1107ED4E234CFF53008F8FC6 /* CustomProgressView.swift in Sources */,
 				11546F0923523C4300D515B5 /* AddCategoryViewController.swift in Sources */,
+				114E3CFF2375AC7300B4F261 /* AddExpenseViewController.swift in Sources */,
 				11216E23234CC2A2002FD82E /* Cash_Limits.xcdatamodeld in Sources */,
 				11C6DD482370630D0035644D /* Expense.swift in Sources */,
 				11216E1B234CC2A2002FD82E /* HomeViewController.swift in Sources */,

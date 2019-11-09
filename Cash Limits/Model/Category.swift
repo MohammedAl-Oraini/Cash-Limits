@@ -33,15 +33,34 @@ class Category: NSManagedObject {
         if let container = container {
             let request: NSFetchRequest<Category> = Category.fetchRequest()
             do {
-                let Category = try container.viewContext.fetch(request)
-                print("Catagories loaded with :\(Category.count) Category")
-                return Category
+                let categorys = try container.viewContext.fetch(request)
+                print("Catagories loaded with :\(categorys.count) Category")
+                return categorys
             } catch {
                print("error loading the Category")
             }
         }
         print("returned with an emity arry")
         return []
+    }
+    
+    class func LoadCategoryByName(container: NSPersistentContainer?,name:String) -> Category? {
+        if let container = container {
+                  let request: NSFetchRequest<Category> = Category.fetchRequest()
+                  do {
+                      let categorys = try container.viewContext.fetch(request)
+                      print("Catagories loaded with :\(categorys.count) Category")
+                    for category in categorys {
+                        if category.name == name {
+                            return category
+                        }
+                    }
+                  } catch {
+                     print("error loading the Category")
+                  }
+              }
+        print("category was not found")
+        return nil
     }
 
 }

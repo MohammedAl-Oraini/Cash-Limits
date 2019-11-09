@@ -18,6 +18,8 @@ class HistoryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        categoryLabel.layer.cornerRadius = 15
+        categoryLabel.layer.masksToBounds = true
         // Initialization code
     }
 
