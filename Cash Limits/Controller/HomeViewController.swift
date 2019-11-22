@@ -95,6 +95,9 @@ class HomeViewController: UIViewController {
         } else if segue.identifier == "addExpenseSegueIdentifier" {
             if let vc = segue.destination as? AddExpenseViewController {
                 vc.container = container
+                vc.addedExpense = { [weak self]  in
+                    self?.categoryCollectionView.reloadData()
+                }
             }
         }
     }
@@ -116,9 +119,21 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
-        cell.categoryName.text = categoryCollection[indexPath.row].name
-        cell.limitLabel.text = "Limit: \(categoryCollection[indexPath.row].limit ?? 0) SAR"
+        cell.customProgressView.progressTintColor = UIColor.clear
+        let categoryName = categoryCollection[indexPath.row].name
+        cell.categoryName.text = categoryName
+        let limit = categoryCollection[indexPath.row].limit! as Decimal
+        cell.limitLabel.text = "Limit: \(limit) SAR"
+        let categoryExpenses = Expense.loadCategoryExpenses(container: container, name: categoryName!)
+        cell.spentLabel.text = "Spent: \(categoryExpenses) SAR"
         cell.delegate = self
+        let progressViewPresentage = categoryExpenses / limit
+        if progressViewPresentage <= 1 {
+            let progress = Float( truncating: progressViewPresentage as NSNumber)
+            cell.customProgressView.progress = progress
+        } else if progressViewPresentage > 1 {
+            cell.customProgressView.progress = 1
+        }
 //        cell.layer.cornerRadius = 15
 //        cell.layer.borderWidth = 1
 //        cell.layer.borderColor = UIColor.red.cgColor
@@ -131,28 +146,29 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
         //cell.customProgressView.progressImage = UIImage.gradientImage(with: cell.customProgressView.frame, colors: [UIColor.green.cgColor, UIColor.red.cgColor], locations: nil)
         //cell.customProgressView.trackImage = UIImage.gradientImage(with: cell.customProgressView.frame, colors: [UIColor.green.cgColor, UIColor.red.cgColor], locations: nil)
         
-        if indexPath.row == 0 {
-            cell.customProgressView.progress = 0.7
-        }
-        
-        if indexPath.row == 2 {
-            cell.customProgressView.progress = 0.2
-        }
-        
-        if indexPath.row == 3 {
-            cell.customProgressView.progress = 0.9
-        }
+//        if indexPath.row == 0 {
+//            cell.customProgressView.progress = 0.7
+//        }
+//
+//        if indexPath.row == 2 {
+//            cell.customProgressView.progress = 0.2
+//        }
+//
+//        if indexPath.row == 3 {
+//            cell.customProgressView.progress = 0.9
+//        }
         
         if cell.customProgressView.progress > 0.5 && cell.customProgressView.progress < 0.75 {
-            cell.customProgressView.progressTintColor = .orange
-        }
-        if cell.customProgressView.progress >= 0.75 {
-            cell.customProgressView.progressTintColor = .red
+            cell.customProgressView.progressTintColor = .systemOrange
+        } else if cell.customProgressView.progress >= 0.75 {
+            cell.customProgressView.progressTintColor = .systemRed
+        }else {
+           cell.customProgressView.progressTintColor = .systemGreen
         }
         
-        let percentage = cell.customProgressView.progress
+        let percentage = Int(cell.customProgressView.progress * 100)
         
-        cell.percentageLabel.text = "\(percentage * 100) %"
+        cell.percentageLabel.text = "\(percentage) %"
         
         return cell
     }

@@ -40,4 +40,26 @@ class Expense: NSManagedObject {
         return []
     }
     
+    class func loadCategoryExpenses(container: NSPersistentContainer?,name:String) -> Decimal{
+        if let container = container {
+            let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+            let category = Category.LoadCategoryByName(container: container, name: name)
+            let predicate = NSPredicate(format: "expenceCategory == %@", category!)
+            request.predicate = predicate
+            do {
+                let expenses = try container.viewContext.fetch(request)
+                print("Expenses loaded with :\(expenses.count) expenses")
+                var spent:Decimal = 0
+                for expense in expenses {
+                    spent += expense.amount! as Decimal
+                }
+                return spent
+            } catch {
+               print("error loading the expenses")
+            }
+        }
+        print("returned with an emity arry")
+        return 0
+    }
+    
 }

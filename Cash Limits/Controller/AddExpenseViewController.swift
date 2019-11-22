@@ -18,7 +18,7 @@ class AddExpenseViewController: UIViewController {
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
     
-    
+     var addedExpense: (() -> ())?
     
     static var categoryName:String = ""
 
@@ -40,6 +40,7 @@ class AddExpenseViewController: UIViewController {
         guard let amountDouble = Double(amountString) else { return }
         let amount = Decimal(amountDouble)
         Expense.addExpense(container: container, name: categoryLabel.text!, amount: amount)
+        addedExpense?()
         dismiss(animated: true, completion: nil)
     }
     

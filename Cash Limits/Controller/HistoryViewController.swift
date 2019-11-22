@@ -59,7 +59,11 @@ extension HistoryViewController: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell1", for: indexPath) as! HistoryTableViewCell
         cell.expenseAmount.text = "\(expensesCollection[indexPath.row].amount!) SAR"
         cell.categoryLabel.text = "\(expensesCollection[indexPath.row].expenceCategory!.name!)"
-        cell.dateLabel.text = "\(expensesCollection[indexPath.row].date!)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        let date = dateFormatter.string(from: expensesCollection[indexPath.row].date!)
+        cell.dateLabel.text = "\(date)"
         
         return cell
     }
