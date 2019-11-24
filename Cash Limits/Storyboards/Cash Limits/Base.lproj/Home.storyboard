@@ -26,7 +26,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="107.5" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <size key="titleShadowOffset" width="10" height="10"/>
-                                                <state key="normal" title="3000 SAR">
+                                                <state key="normal" title="0 SAR">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -45,7 +45,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <size key="titleShadowOffset" width="10" height="10"/>
-                                                <state key="normal" title="5000 SAR">
+                                                <state key="normal" title="0 SAR">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -64,9 +64,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="107.5" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <size key="titleShadowOffset" width="10" height="10"/>
-                                                <state key="normal" title="8000 SAR">
+                                                <state key="normal" title="0 SAR">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="TFq-Ep-3qF" kind="popoverPresentation" identifier="addIncomeSegueIdentifier" popoverAnchorView="8iv-ow-BmS" id="fMZ-mk-Mqx">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="income" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3g-4J-WlY">
                                                 <rect key="frame" x="0.0" y="38" width="107.5" height="20.5"/>
@@ -244,28 +249,28 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2g2-sj-fuv">
-                                <rect key="frame" x="16" y="72" width="382" height="62.5"/>
+                                <rect key="frame" x="16" y="72" width="382" height="100.5"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rF6-MB-gap">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFx-XL-Ide">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="38" width="382" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="90D-a7-85d">
-                                        <rect key="frame" x="0.0" y="28.5" width="382" height="34"/>
+                                        <rect key="frame" x="0.0" y="66.5" width="382" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rF6-MB-gap">
-                                <rect key="frame" x="16" y="150.5" width="382" height="30"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -273,10 +278,7 @@
                             <constraint firstItem="2g2-sj-fuv" firstAttribute="leading" secondItem="Bwj-sa-WQq" secondAttribute="leading" constant="16" id="Fv3-BQ-jEv"/>
                             <constraint firstItem="2g2-sj-fuv" firstAttribute="top" secondItem="pin-uR-HhQ" secondAttribute="bottom" constant="16" id="L4E-9a-htw"/>
                             <constraint firstItem="Bwj-sa-WQq" firstAttribute="trailing" secondItem="2g2-sj-fuv" secondAttribute="trailing" constant="16" id="ZKG-Bu-ctB"/>
-                            <constraint firstItem="rF6-MB-gap" firstAttribute="top" secondItem="2g2-sj-fuv" secondAttribute="bottom" constant="16" id="ah1-oM-2Tj"/>
                             <constraint firstItem="pin-uR-HhQ" firstAttribute="top" secondItem="Bwj-sa-WQq" secondAttribute="top" id="p1u-T5-VhA"/>
-                            <constraint firstItem="rF6-MB-gap" firstAttribute="leading" secondItem="Bwj-sa-WQq" secondAttribute="leading" constant="16" id="rkd-Kk-GDz"/>
-                            <constraint firstItem="Bwj-sa-WQq" firstAttribute="trailing" secondItem="rF6-MB-gap" secondAttribute="trailing" constant="16" id="y2O-7B-bvN"/>
                             <constraint firstItem="pin-uR-HhQ" firstAttribute="leading" secondItem="Bwj-sa-WQq" secondAttribute="leading" id="yTY-Cj-M0r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bwj-sa-WQq"/>
@@ -392,11 +394,14 @@
                     <connections>
                         <outlet property="categoryLimitTextField" destination="2qB-Ez-57I" id="NHe-Q7-Vuk"/>
                         <outlet property="categoryNameTextField" destination="SgL-rt-JlN" id="cGj-8Y-fGA"/>
+                        <outlet property="freeLimitLabel" destination="6Mb-lT-Frm" id="7v2-q8-55z"/>
+                        <outlet property="incomeLabel" destination="68g-JD-D2c" id="5Eg-VN-CAf"/>
+                        <outlet property="usedLimitLabel" destination="eMl-de-Maf" id="SzQ-5G-Kmz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBt-O0-et4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1062" y="-853"/>
+            <point key="canvasLocation" x="-971" y="-1202"/>
         </scene>
         <!--Home-->
         <scene sceneID="PEV-K0-5RQ">
@@ -416,6 +421,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCG-cR-xiu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2675" y="-618"/>
+        </scene>
+        <!--Add Income View Controller-->
+        <scene sceneID="2Fh-v0-tp8">
+            <objects>
+                <viewController id="TFq-Ep-3qF" customClass="AddIncomeViewController" customModule="Cash_Limits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dic-l9-e6o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3o-k9-Dhm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Add income" id="8hP-Vz-xJT">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bYr-gW-rRk">
+                                            <connections>
+                                                <action selector="cancelButtonTapped:" destination="TFq-Ep-3qF" id="C82-y6-lQ8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="idj-Wh-Hdd">
+                                            <connections>
+                                                <action selector="doneButtonTapped:" destination="TFq-Ep-3qF" id="YfJ-4b-jVB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TqI-AX-DBT">
+                                <rect key="frame" x="16" y="88" width="382" height="62.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2IK-CY-b9e">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ybI-zJ-gVJ" userLabel="Income Name Text Field">
+                                        <rect key="frame" x="0.0" y="28.5" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LG2-NA-iKQ">
+                                <rect key="frame" x="16" y="170.5" width="382" height="62.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biv-gT-Dil">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2C-aN-exs" userLabel="Amount Text Field">
+                                        <rect key="frame" x="0.0" y="28.5" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="o3o-k9-Dhm" firstAttribute="leading" secondItem="KMa-le-kFH" secondAttribute="leading" id="C2H-fC-zmm"/>
+                            <constraint firstItem="o3o-k9-Dhm" firstAttribute="top" secondItem="KMa-le-kFH" secondAttribute="top" id="CBu-f0-WTp"/>
+                            <constraint firstItem="LG2-NA-iKQ" firstAttribute="leading" secondItem="KMa-le-kFH" secondAttribute="leading" constant="16" id="Fjp-MF-VuL"/>
+                            <constraint firstItem="KMa-le-kFH" firstAttribute="trailing" secondItem="LG2-NA-iKQ" secondAttribute="trailing" constant="16" id="Lzm-xb-uXp"/>
+                            <constraint firstItem="TqI-AX-DBT" firstAttribute="leading" secondItem="KMa-le-kFH" secondAttribute="leading" constant="16" id="XHH-cV-Udn"/>
+                            <constraint firstItem="LG2-NA-iKQ" firstAttribute="top" secondItem="TqI-AX-DBT" secondAttribute="bottom" constant="20" id="XXR-s1-gvy"/>
+                            <constraint firstItem="TqI-AX-DBT" firstAttribute="top" secondItem="o3o-k9-Dhm" secondAttribute="bottom" constant="32" id="fim-oH-svc"/>
+                            <constraint firstItem="o3o-k9-Dhm" firstAttribute="trailing" secondItem="KMa-le-kFH" secondAttribute="trailing" id="fxZ-cV-wdW"/>
+                            <constraint firstItem="KMa-le-kFH" firstAttribute="trailing" secondItem="TqI-AX-DBT" secondAttribute="trailing" constant="16" id="r24-qd-wtV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KMa-le-kFH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zJv-9H-16S"/>
+                    <connections>
+                        <outlet property="incomeAmountTextField" destination="G2C-aN-exs" id="b2m-3W-drp"/>
+                        <outlet property="incomeNameTextField" destination="ybI-zJ-gVJ" id="FDg-Zf-aef"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ewi-XY-o1M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-259" y="-690"/>
         </scene>
     </scenes>
     <resources>

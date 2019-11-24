@@ -10,8 +10,13 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="expenceCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="expenses" inverseEntity="Category"/>
     </entity>
+    <entity name="Income" representedClassName=".Income" syncable="YES" codeGenerationType="category">
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Category" positionX="-276.30078125" positionY="362.56640625" width="128" height="88"/>
         <element name="Expense" positionX="-23.6640625" positionY="375.90625" width="128" height="88"/>
+        <element name="Income" positionX="-153" positionY="396" width="128" height="73"/>
     </elements>
 </model>

@@ -28,6 +28,25 @@ class Expense: NSManagedObject {
     class func loadExpenses(container: NSPersistentContainer?) -> [Expense]{
         if let container = container {
             let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+            let sort = NSSortDescriptor(key: "date", ascending: false)
+            request.sortDescriptors = [sort]
+            do {
+                let expenses = try container.viewContext.fetch(request)
+                print("Expenses loaded with :\(expenses.count) expenses")
+                return expenses
+            } catch {
+               print("error loading the expenses")
+            }
+        }
+        print("returned with an emity arry")
+        return []
+    }
+    
+    class func loadExpensesWithAmountSort(container: NSPersistentContainer?) -> [Expense]{
+        if let container = container {
+            let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+            let sort = NSSortDescriptor(key: "amount", ascending: false)
+            request.sortDescriptors = [sort]
             do {
                 let expenses = try container.viewContext.fetch(request)
                 print("Expenses loaded with :\(expenses.count) expenses")
@@ -54,6 +73,24 @@ class Expense: NSManagedObject {
                     spent += expense.amount! as Decimal
                 }
                 return spent
+            } catch {
+               print("error loading the expenses")
+            }
+        }
+        print("returned with an emity arry")
+        return 0
+    }
+    class func loadTotalExpenses(container: NSPersistentContainer?) -> Decimal{
+        if let container = container {
+            let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+            do {
+                let expenses = try container.viewContext.fetch(request)
+                print("Expenses loaded with :\(expenses.count) expense")
+                var totalExpenses:Decimal = 0
+                for expense in expenses {
+                    totalExpenses += expense.amount! as Decimal
+                }
+                return totalExpenses
             } catch {
                print("error loading the expenses")
             }

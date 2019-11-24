@@ -62,5 +62,23 @@ class Category: NSManagedObject {
         print("category was not found")
         return nil
     }
+    class func loadTotalLimits(container: NSPersistentContainer?) -> Decimal{
+        if let container = container {
+            let request: NSFetchRequest<Category> = Category.fetchRequest()
+            do {
+                let categories = try container.viewContext.fetch(request)
+                print("Expenses loaded with :\(categories.count) expense")
+                var totallimits:Decimal = 0
+                for category in categories {
+                    totallimits += category.limit! as Decimal
+                }
+                return totallimits
+            } catch {
+               print("error loading the expenses")
+            }
+        }
+        print("returned with an emity arry")
+        return 0
+    }
 
 }

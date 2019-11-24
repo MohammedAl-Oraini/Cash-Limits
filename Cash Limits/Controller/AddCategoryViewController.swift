@@ -17,13 +17,31 @@ class AddCategoryViewController: UIViewController {
 
     @IBOutlet weak var categoryNameTextField: UITextField!
     @IBOutlet weak var categoryLimitTextField: UITextField!
+    @IBOutlet weak var incomeLabel: UILabel!
+    @IBOutlet weak var usedLimitLabel: UILabel!
+    @IBOutlet weak var freeLimitLabel: UILabel!
+    
+    let categoryLimitTextFieldDelegate = DecimalTextFieldDelegate()
     
     var addedCategory: ((_ category:Category?) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        categoryLimitTextField.delegate = categoryLimitTextFieldDelegate
+        setUp()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func setUp () {
+        let income = Income.loadIncomes(container: container)
+        let totalLimits = Category.loadTotalLimits(container: container)
+        let freeLimit = income - totalLimits
+        incomeLabel.text = "Income: \(income) SAR"
+        usedLimitLabel.text = "Used limit : \(totalLimits) SAR"
+        freeLimitLabel.text = "Free limit : \(freeLimit) SAR"
+        
     }
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {

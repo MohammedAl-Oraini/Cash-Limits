@@ -16,6 +16,7 @@ class HistoryViewController: UIViewController {
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
     @IBOutlet weak var historyTableView: UITableView!
+    @IBOutlet weak var orderSegmentedControl: UISegmentedControl!
     
     let c = [1,2,3,4]
     var expensesCollection:[Expense] = []
@@ -36,12 +37,38 @@ class HistoryViewController: UIViewController {
         expensesCollection.removeAll()
     }
     
+    func loadSortedByDateExpenses() {
+        expensesCollection.removeAll()
+        for expense in Expense.loadExpenses(container:container) {
+            expensesCollection.append(expense)
+        }
+        historyTableView.reloadData()
+    }
+    
+    func loadSortedByAmountExpenses() {
+        expensesCollection.removeAll()
+        for expense in Expense.loadExpensesWithAmountSort(container: container) {
+            expensesCollection.append(expense)
+        }
+        historyTableView.reloadData()
+    }
+    
     func loadExpenses() {
-          for expense in Expense.loadExpenses(container:container) {
-              expensesCollection.append(expense)
-          }
-          historyTableView.reloadData()
-      }
+        switch orderSegmentedControl.selectedSegmentIndex {
+        case 0:
+            loadSortedByDateExpenses()
+        case 1:
+            loadSortedByAmountExpenses()
+        default:
+            break
+        }
+    }
+    
+    
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        loadExpenses()
+    }
+    
 
 }
 

@@ -40,9 +40,12 @@
                                     <constraint firstAttribute="height" constant="31" id="phb-VN-80i"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Date"/>
+                                    <segment title="Amount"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChanged:" destination="iR6-r5-qtf" eventType="valueChanged" id="5IF-dn-WHD"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rea-R6-Nfm">
                                 <rect key="frame" x="0.0" y="139" width="414" height="757"/>
@@ -146,6 +149,7 @@
                     <navigationItem key="navigationItem" title="History" id="8bW-vT-gyj"/>
                     <connections>
                         <outlet property="historyTableView" destination="rea-R6-Nfm" id="tX8-eD-akz"/>
+                        <outlet property="orderSegmentedControl" destination="W3h-WK-rNj" id="4km-Kc-QoY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6E-ov-Gde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

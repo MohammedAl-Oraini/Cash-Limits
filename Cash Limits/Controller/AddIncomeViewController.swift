@@ -1,53 +1,46 @@
 //
-//  AddExpenseViewController.swift
+//  AddIncomeViewController.swift
 //  Cash Limits
 //
-//  Created by Mohammad Al-Oraini on 08/11/2019.
+//  Created by Mohammad Al-Oraini on 24/11/2019.
 //  Copyright © 2019 Mohammad Al-Oraini. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class AddExpenseViewController: UIViewController {
+class AddIncomeViewController: UIViewController {
     
     //MARK: - Core Data Persistent Container
         
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
-    
-    @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var categoryLabel: UILabel!
-    
-    let amountTextFieldDelgate = DecimalTextFieldDelegate()
-    
-     var addedExpense: (() -> ())?
-    
-    static var categoryName:String = ""
 
+    @IBOutlet weak var incomeNameTextField: UITextField!
+    @IBOutlet weak var incomeAmountTextField: UITextField!
+    
+    let incomeAmountTextFieldDelegate = DecimalTextFieldDelegate()
+    
+    var addedIncome: (() -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        categoryLabel.layer.cornerRadius = 15
-        categoryLabel.layer.masksToBounds = true
         
-        amountTextField.delegate = amountTextFieldDelgate
+        incomeAmountTextField.delegate = incomeAmountTextFieldDelegate
 
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        categoryLabel.text = AddExpenseViewController.categoryName
-    }
-    
+
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        guard let amountString = amountTextField.text else { return }
+        guard let name = incomeNameTextField.text else { return }
+        guard let amountString = incomeAmountTextField.text else { return }
         guard let amountDouble = Double(amountString) else { return }
         let amount = Decimal(amountDouble)
-        Expense.addExpense(container: container, name: categoryLabel.text!, amount: amount)
-        addedExpense?()
+        Income.saveIncome(name: name, amount: amount, container: container)
+        addedIncome?()
         dismiss(animated: true, completion: nil)
+        
     }
-    
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }

@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.leftBarButtonItem = editButtonItem
+        //navigationItem.leftBarButtonItem = editButtonItem
         
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
@@ -39,6 +39,9 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadCategories()
+//        loadIncome()
+//        loadtotalExpenses()
+        loadBalance()
         print("added categories")
     }
     
@@ -79,6 +82,26 @@ class HomeViewController: UIViewController {
         categoryCollectionView.reloadData()
     }
     
+//    func loadIncome() {
+//        let totalIncome = Income.loadIncomes(container: container)
+//        incomeButton.setTitle("\(totalIncome) SAR", for: .normal)
+//        //incomeButton.titleLabel?.text = "\(totalIncome) SAR"
+//    }
+//
+//    func loadtotalExpenses() {
+//        let totalExpenses = Expense.loadTotalExpenses(container: container)
+//        spentButton.setTitle("\(totalExpenses) SAR", for: .normal)
+//    }
+    
+    func loadBalance() {
+        let totalExpenses = Expense.loadTotalExpenses(container: container)
+        let totalIncome = Income.loadIncomes(container: container)
+        let balance = totalIncome - totalExpenses
+        incomeButton.setTitle("\(totalIncome) SAR", for: .normal)
+        spentButton.setTitle("\(totalExpenses) SAR", for: .normal)
+        balanceButton.setTitle("\(balance) SAR", for: .normal)
+    }
+    
     //MARK: - prepare for segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -97,6 +120,14 @@ class HomeViewController: UIViewController {
                 vc.container = container
                 vc.addedExpense = { [weak self]  in
                     self?.categoryCollectionView.reloadData()
+                    self?.loadBalance()
+                }
+            }
+        } else if segue.identifier == "addIncomeSegueIdentifier" {
+            if let vc = segue.destination as? AddIncomeViewController {
+                vc.container = container
+                vc.addedIncome = { [weak self]  in
+                    self?.loadBalance()
                 }
             }
         }
