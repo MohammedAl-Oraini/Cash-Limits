@@ -25,6 +25,9 @@
 		11546F0623521CF600D515B5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11546F0523521CF600D515B5 /* Category.swift */; };
 		11546F0923523C4300D515B5 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11546F0823523C4300D515B5 /* AddCategoryViewController.swift */; };
 		1185843C23759DDD001ACD72 /* CategoryCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1185843B23759DDD001ACD72 /* CategoryCollectionViewCellDelegate.swift */; };
+		1188F72B2396AC2B00995756 /* GraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188F72A2396AC2B00995756 /* GraphsViewController.swift */; };
+		1188F72D2396AD0200995756 /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188F72C2396AD0200995756 /* Page1ViewController.swift */; };
+		1188F72F2396AD1100995756 /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188F72E2396AD1100995756 /* Page2ViewController.swift */; };
 		11B18C7E238ACD4A00D9E4B2 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B18C7D238ACD4900D9E4B2 /* Income.swift */; };
 		11B18C80238ACF6000D9E4B2 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B18C7F238ACF6000D9E4B2 /* AddIncomeViewController.swift */; };
 		11B18C82238ADCA700D9E4B2 /* DecimalTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B18C81238ADCA700D9E4B2 /* DecimalTextFieldDelegate.swift */; };
@@ -53,6 +56,9 @@
 		11546F0523521CF600D515B5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		11546F0823523C4300D515B5 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		1185843B23759DDD001ACD72 /* CategoryCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
+		1188F72A2396AC2B00995756 /* GraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsViewController.swift; sourceTree = "<group>"; };
+		1188F72C2396AD0200995756 /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
+		1188F72E2396AD1100995756 /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
 		11B18C7D238ACD4900D9E4B2 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		11B18C7F238ACF6000D9E4B2 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
 		11B18C81238ADCA700D9E4B2 /* DecimalTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalTextFieldDelegate.swift; sourceTree = "<group>"; };
@@ -129,13 +135,48 @@
 		11546F0723523BEF00D515B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1188F7262396AAEB00995756 /* Home */,
+				1188F7272396AB1500995756 /* History */,
+				1188F7282396AB2A00995756 /* Graphs */,
+				1188F7292396AB6800995756 /* Settings */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1188F7262396AAEB00995756 /* Home */ = {
+			isa = PBXGroup;
+			children = (
 				11216E1A234CC2A2002FD82E /* HomeViewController.swift */,
-				11216E1C234CC2A2002FD82E /* HistoryViewController.swift */,
 				11546F0823523C4300D515B5 /* AddCategoryViewController.swift */,
 				114E3CFE2375AC7300B4F261 /* AddExpenseViewController.swift */,
 				11B18C7F238ACF6000D9E4B2 /* AddIncomeViewController.swift */,
 			);
-			path = Controller;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1188F7272396AB1500995756 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				11216E1C234CC2A2002FD82E /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		1188F7282396AB2A00995756 /* Graphs */ = {
+			isa = PBXGroup;
+			children = (
+				1188F72A2396AC2B00995756 /* GraphsViewController.swift */,
+				1188F72C2396AD0200995756 /* Page1ViewController.swift */,
+				1188F72E2396AD1100995756 /* Page2ViewController.swift */,
+			);
+			path = Graphs;
+			sourceTree = "<group>";
+		};
+		1188F7292396AB6800995756 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		11C6DD49237068100035644D /* View */ = {
@@ -235,12 +276,15 @@
 				11C6DD482370630D0035644D /* Expense.swift in Sources */,
 				11216E1B234CC2A2002FD82E /* HomeViewController.swift in Sources */,
 				11216E17234CC2A2002FD82E /* AppDelegate.swift in Sources */,
+				1188F72B2396AC2B00995756 /* GraphsViewController.swift in Sources */,
 				1107ED50234D1A51008F8FC6 /* CategoryCollectionViewCell.swift in Sources */,
 				11C6DD4B237068740035644D /* HistoryTableViewCell.swift in Sources */,
 				11B18C82238ADCA700D9E4B2 /* DecimalTextFieldDelegate.swift in Sources */,
 				11216E19234CC2A2002FD82E /* SceneDelegate.swift in Sources */,
+				1188F72D2396AD0200995756 /* Page1ViewController.swift in Sources */,
 				11546F0623521CF600D515B5 /* Category.swift in Sources */,
 				1185843C23759DDD001ACD72 /* CategoryCollectionViewCellDelegate.swift in Sources */,
+				1188F72F2396AD1100995756 /* Page2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
