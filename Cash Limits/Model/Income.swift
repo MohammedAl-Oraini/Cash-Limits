@@ -45,4 +45,19 @@ class Income: NSManagedObject {
         print("returned with an emity arry")
         return 0
     }
+    
+    class func loadIncomeArry(container: NSPersistentContainer?) -> [Income]{
+        if let container = container {
+            let request: NSFetchRequest<Income> = Income.fetchRequest()
+            do {
+                let incomes = try container.viewContext.fetch(request)
+                print("Incomes loaded with :\(incomes.count) incomes")
+                return incomes
+            } catch {
+               print("error loading the incomes")
+            }
+        }
+        print("returned with an emity arry")
+        return []
+    }
 }

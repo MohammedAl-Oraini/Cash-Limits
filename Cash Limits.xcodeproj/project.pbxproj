@@ -33,6 +33,7 @@
 		1188F73723A4998600995756 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188F73623A4998600995756 /* Request.swift */; };
 		1188F73923A499B400995756 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188F73823A499B400995756 /* Client.swift */; };
 		1188F73B23A49FC500995756 /* ManageCurrencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188F73A23A49FC500995756 /* ManageCurrencyTableViewController.swift */; };
+		1188F73D23A4B2C600995756 /* ManageIncomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188F73C23A4B2C600995756 /* ManageIncomeTableViewController.swift */; };
 		11B18C7E238ACD4A00D9E4B2 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B18C7D238ACD4900D9E4B2 /* Income.swift */; };
 		11B18C80238ACF6000D9E4B2 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B18C7F238ACF6000D9E4B2 /* AddIncomeViewController.swift */; };
 		11B18C82238ADCA700D9E4B2 /* DecimalTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B18C81238ADCA700D9E4B2 /* DecimalTextFieldDelegate.swift */; };
@@ -68,6 +69,7 @@
 		1188F73623A4998600995756 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		1188F73823A499B400995756 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		1188F73A23A49FC500995756 /* ManageCurrencyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCurrencyTableViewController.swift; sourceTree = "<group>"; };
+		1188F73C23A4B2C600995756 /* ManageIncomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageIncomeTableViewController.swift; sourceTree = "<group>"; };
 		11B18C7D238ACD4900D9E4B2 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		11B18C7F238ACF6000D9E4B2 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
 		11B18C81238ADCA700D9E4B2 /* DecimalTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalTextFieldDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				1188F73323A48E0300995756 /* SettingsTableViewController.swift */,
 				1188F73A23A49FC500995756 /* ManageCurrencyTableViewController.swift */,
+				1188F73C23A4B2C600995756 /* ManageIncomeTableViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				11B18C80238ACF6000D9E4B2 /* AddIncomeViewController.swift in Sources */,
 				11B18C7E238ACD4A00D9E4B2 /* Income.swift in Sources */,
 				11216E1D234CC2A2002FD82E /* HistoryViewController.swift in Sources */,
+				1188F73D23A4B2C600995756 /* ManageIncomeTableViewController.swift in Sources */,
 				1107ED4E234CFF53008F8FC6 /* CustomProgressView.swift in Sources */,
 				1188F73923A499B400995756 /* Client.swift in Sources */,
 				1188F73723A4998600995756 /* Request.swift in Sources */,
