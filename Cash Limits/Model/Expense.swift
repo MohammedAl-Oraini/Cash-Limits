@@ -99,4 +99,33 @@ class Expense: NSManagedObject {
         return 0
     }
     
+    class func loadTotalExpensesOnDate(container: NSPersistentContainer?,date: Date) -> Decimal{
+        if let container = container {
+            let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+            // get the current calendar
+            let calendar = NSCalendar.current
+            // get the start of the day of the selected date
+            let startDate = calendar.startOfDay(for: date)
+            // get the start of the day after the selected date
+            let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)
+            //let endDate = calendar.dateByAddingUnit(.Day, value: 1, toDate: startDate, options: NSCalendar.Options())!
+            // create a predicate to filter between start date and end date
+            let predicate = NSPredicate(format: "date >= %@ AND date < %@", startDate as NSDate, endDate! as NSDate)
+            request.predicate = predicate
+            do {
+                let expenses = try container.viewContext.fetch(request)
+                print("Expenses loaded with :\(expenses.count) expense")
+                var totalExpenses:Decimal = 0
+                for expense in expenses {
+                    totalExpenses += expense.amount! as Decimal
+                }
+                return totalExpenses
+            } catch {
+               print("error loading the expenses")
+            }
+        }
+        print("returned with an emity arry")
+        return 0
+    }
+    
 }

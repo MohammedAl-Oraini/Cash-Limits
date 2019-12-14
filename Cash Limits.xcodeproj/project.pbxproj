@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		1188F72B2396AC2B00995756 /* GraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188F72A2396AC2B00995756 /* GraphsViewController.swift */; };
 		1188F72D2396AD0200995756 /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188F72C2396AD0200995756 /* Page1ViewController.swift */; };
 		1188F72F2396AD1100995756 /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188F72E2396AD1100995756 /* Page2ViewController.swift */; };
+		1188F7322396B33F00995756 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F7312396B33F00995756 /* Charts */; };
 		11B18C7E238ACD4A00D9E4B2 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B18C7D238ACD4900D9E4B2 /* Income.swift */; };
 		11B18C80238ACF6000D9E4B2 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B18C7F238ACF6000D9E4B2 /* AddIncomeViewController.swift */; };
 		11B18C82238ADCA700D9E4B2 /* DecimalTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B18C81238ADCA700D9E4B2 /* DecimalTextFieldDelegate.swift */; };
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1188F7322396B33F00995756 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +209,9 @@
 			dependencies = (
 			);
 			name = "Cash Limits";
+			packageProductDependencies = (
+				1188F7312396B33F00995756 /* Charts */,
+			);
 			productName = "Cash Limits";
 			productReference = 11216E13234CC2A2002FD82E /* Cash Limits.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 11216E0A234CC2A2002FD82E;
+			packageReferences = (
+				1188F7302396B33F00995756 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 11216E14234CC2A2002FD82E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -510,6 +518,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1188F7302396B33F00995756 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1188F7312396B33F00995756 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1188F7302396B33F00995756 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		11216E21234CC2A2002FD82E /* Cash_Limits.xcdatamodeld */ = {

@@ -52,13 +52,28 @@
                     <view key="view" contentMode="scaleToFill" id="VP9-tF-MU9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NS-81-WtY" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6NS-81-WtY" secondAttribute="bottom" id="3U7-wm-rSz"/>
+                            <constraint firstItem="6NS-81-WtY" firstAttribute="top" secondItem="VP9-tF-MU9" secondAttribute="top" id="3Z9-TY-sRu"/>
+                            <constraint firstItem="6NS-81-WtY" firstAttribute="trailing" secondItem="0Rm-GK-5ev" secondAttribute="trailing" id="mO6-Ru-vmu"/>
+                            <constraint firstItem="6NS-81-WtY" firstAttribute="leading" secondItem="0Rm-GK-5ev" secondAttribute="leading" id="oan-iV-0UY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0Rm-GK-5ev"/>
                     </view>
+                    <connections>
+                        <outlet property="barChart" destination="6NS-81-WtY" id="I1v-0O-yIc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYP-Du-v45" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2674" y="-24"/>
+            <point key="canvasLocation" x="2673.913043478261" y="-24.107142857142858"/>
         </scene>
         <!--Page1 View Controller-->
         <scene sceneID="gxm-YI-JLS">
@@ -67,13 +82,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ccs-15-b4K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-Bx-RBK" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Idg-Bx-RBK" firstAttribute="top" secondItem="Ccs-15-b4K" secondAttribute="top" id="A2z-tg-iZf"/>
+                            <constraint firstAttribute="bottom" secondItem="Idg-Bx-RBK" secondAttribute="bottom" id="cWQ-45-PHd"/>
+                            <constraint firstItem="Idg-Bx-RBK" firstAttribute="leading" secondItem="TIn-Mw-Z08" secondAttribute="leading" id="hAg-9m-24h"/>
+                            <constraint firstItem="Idg-Bx-RBK" firstAttribute="trailing" secondItem="TIn-Mw-Z08" secondAttribute="trailing" id="wcM-hm-JgU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TIn-Mw-Z08"/>
                     </view>
+                    <connections>
+                        <outlet property="pieChart" destination="Idg-Bx-RBK" id="Fdw-Wk-Rpk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KU0-Jk-R7J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2688" y="-698"/>
+            <point key="canvasLocation" x="2686.9565217391305" y="-698.4375"/>
         </scene>
         <!--Graphs-->
         <scene sceneID="Bhb-wT-nPV">
