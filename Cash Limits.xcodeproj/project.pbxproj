@@ -70,6 +70,7 @@
 		1188F73823A499B400995756 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		1188F73A23A49FC500995756 /* ManageCurrencyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCurrencyTableViewController.swift; sourceTree = "<group>"; };
 		1188F73C23A4B2C600995756 /* ManageIncomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageIncomeTableViewController.swift; sourceTree = "<group>"; };
+		1188F73E23A929D000995756 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		11B18C7D238ACD4900D9E4B2 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		11B18C7F238ACF6000D9E4B2 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
 		11B18C81238ADCA700D9E4B2 /* DecimalTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalTextFieldDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		11216E0A234CC2A2002FD82E = {
 			isa = PBXGroup;
 			children = (
+				1188F73E23A929D000995756 /* README.md */,
 				11216E15234CC2A2002FD82E /* Cash Limits */,
 				11216E14234CC2A2002FD82E /* Products */,
 			);
