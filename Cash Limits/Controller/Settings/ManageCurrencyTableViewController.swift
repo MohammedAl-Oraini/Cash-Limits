@@ -47,7 +47,19 @@ class ManageCurrencyTableViewController: UITableViewController {
                 self.usdRateLabel.text = "\(UserDefaults.standard.double(forKey: "usdRate"))"
                 self.eurRateLabel.text = "\(UserDefaults.standard.double(forKey: "eurRate"))"
             }
+        } else {
+            DispatchQueue.main.async {
+                self.showMessageFailure(message: "Try again later !")
+            }
         }
+    }
+    
+    //MARK: - error handling method
+    
+    func showMessageFailure(message: String) {
+        let alertVC = UIAlertController(title: "Error Updating", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertVC, animated: true, completion: nil)
     }
     // MARK: - Table view data source
 

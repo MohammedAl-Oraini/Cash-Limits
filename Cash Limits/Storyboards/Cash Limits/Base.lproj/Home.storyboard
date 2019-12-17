@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s5z-LB-L9s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s5z-LB-L9s">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -249,7 +249,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2g2-sj-fuv">
-                                <rect key="frame" x="16" y="72" width="382" height="100.5"/>
+                                <rect key="frame" x="16" y="72" width="382" height="139.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rF6-MB-gap">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
@@ -269,6 +269,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4JS-47-Ei2">
+                                        <rect key="frame" x="0.0" y="108.5" width="382" height="32"/>
+                                        <segments>
+                                            <segment title="SAR"/>
+                                            <segment title="USD"/>
+                                            <segment title="EUR"/>
+                                        </segments>
+                                    </segmentedControl>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -286,6 +294,7 @@
                     <connections>
                         <outlet property="amountTextField" destination="90D-a7-85d" id="5MJ-qe-xCJ"/>
                         <outlet property="categoryLabel" destination="rF6-MB-gap" id="Ub0-oJ-q0D"/>
+                        <outlet property="currencySegmentedControl" destination="4JS-47-Ei2" id="tb5-5w-UEI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUo-zK-qOU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -17,6 +17,7 @@ class AddExpenseViewController: UIViewController {
     
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var currencySegmentedControl: UISegmentedControl!
     
     let amountTextFieldDelgate = DecimalTextFieldDelegate()
     
@@ -41,7 +42,17 @@ class AddExpenseViewController: UIViewController {
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         guard let amountString = amountTextField.text else { return }
-        guard let amountDouble = Double(amountString) else { return }
+        guard var amountDouble = Double(amountString) else { return }
+        switch currencySegmentedControl.selectedSegmentIndex {
+        case 0:
+            break
+        case 1:
+            amountDouble = amountDouble * UserDefaults.standard.double(forKey: "usdRate")
+        case 2:
+            amountDouble = amountDouble * UserDefaults.standard.double(forKey: "eurRate")
+        default:
+            break
+        }
         let amount = Decimal(amountDouble)
         Expense.addExpense(container: container, name: categoryLabel.text!, amount: amount)
         addedExpense?()
