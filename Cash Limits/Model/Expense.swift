@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class Expense: NSManagedObject {
+    
+    //MARK: - helper methods
 
     class func addExpense(container: NSPersistentContainer?,name:String,amount:Decimal) {
         if let container = container {
@@ -108,7 +110,6 @@ class Expense: NSManagedObject {
             let startDate = calendar.startOfDay(for: date)
             // get the start of the day after the selected date
             let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)
-            //let endDate = calendar.dateByAddingUnit(.Day, value: 1, toDate: startDate, options: NSCalendar.Options())!
             // create a predicate to filter between start date and end date
             let predicate = NSPredicate(format: "date >= %@ AND date < %@", startDate as NSDate, endDate! as NSDate)
             request.predicate = predicate

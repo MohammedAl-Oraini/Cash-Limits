@@ -15,7 +15,11 @@ class ManageIncomeTableViewController: UITableViewController {
     
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
+    //MARK: - data source
+    
     var incomeArry:[Income] = []
+    
+    //MARK: - life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +35,8 @@ class ManageIncomeTableViewController: UITableViewController {
         super.viewWillDisappear(animated)
         incomeArry.removeAll()
     }
+    
+    //MARK: - load func
 
     func loadIncomeArry() {
         incomeArry = Income.loadIncomeArry(container: container)
@@ -40,12 +46,10 @@ class ManageIncomeTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return incomeArry.count
     }
     

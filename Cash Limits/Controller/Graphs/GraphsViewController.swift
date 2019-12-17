@@ -10,6 +10,8 @@ import UIKit
 
 class GraphsViewController: UIViewController {
     
+    //MARK: - pagePageViewController set up
+    
     private var pageViewController: UIPageViewController!
     private lazy var viewControllers: [UIViewController] = {
         var viewControllers = [UIViewController]()
@@ -20,9 +22,7 @@ class GraphsViewController: UIViewController {
         viewControllers.append(secondIntroViewController)
         return viewControllers
     }()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? UIPageViewController {
@@ -34,7 +34,8 @@ class GraphsViewController: UIViewController {
     }
 }
 
-// MARK: UIPageViewControllerDataSource
+// MARK: - UIPageViewControllerDataSource
+
 extension GraphsViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = viewControllers.firstIndex(of: viewController) else {
@@ -78,7 +79,9 @@ extension GraphsViewController: UIPageViewControllerDataSource {
         return 0
     }
 }
-// MARK: UIPageViewControllerDelegate
+
+// MARK: - UIPageViewControllerDelegate
+
 extension GraphsViewController: UIPageViewControllerDelegate {
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return viewControllers.count

@@ -15,22 +15,29 @@ class Page1ViewController: UIViewController {
     //MARK: - Core Data Persistent Container
     
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    
+    //MARK: - IBOutlet
 
     @IBOutlet weak var pieChart: PieChartView!
+    
+    //MARK: - data source
     
     var dataEntryArry = [PieChartDataEntry]()
     var categoryCollection:[Category] = []
     
+    //MARK: - life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pieChart.chartDescription?.text = "test1"
-        pieChart.centerText = "test 3"
+        pieChart.chartDescription?.text = "Pie Chart for category spendings"
+        pieChart.centerText = ""
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         loadCategories()
         loadDataEntries()
         updateChartData()
@@ -38,9 +45,12 @@ class Page1ViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         dataEntryArry.removeAll()
         categoryCollection.removeAll()
     }
+    
+    //MARK: - load funcs
     
     func loadDataEntries() {
         for category in categoryCollection {
@@ -60,13 +70,15 @@ class Page1ViewController: UIViewController {
     
 
     func updateChartData(){
-        let chartDataSet = PieChartDataSet(entries: dataEntryArry, label: "Test 2")
+        let chartDataSet = PieChartDataSet(entries: dataEntryArry, label: "")
         let chartData = PieChartData(dataSet: chartDataSet)
         let colors = colorsOfCharts(numbersOfColor: dataEntryArry.count)
         chartDataSet.colors = colors
         
         pieChart.data = chartData
     }
+    
+    //MARK: - helper func
     
     private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
       var colors: [UIColor] = []

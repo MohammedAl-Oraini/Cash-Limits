@@ -15,27 +15,36 @@ class HistoryViewController: UIViewController {
     
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
+    //MARK: - IBOutlets
+    
     @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var orderSegmentedControl: UISegmentedControl!
     
-    let c = [1,2,3,4]
+    //MARK: - data source
+    
     var expensesCollection:[Expense] = []
+    
+    //MARK: - life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.historyTableView.delegate = self
         self.historyTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         loadExpenses()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         expensesCollection.removeAll()
     }
+    
+    //MARK: - load data funcs
     
     func loadSortedByDateExpenses() {
         expensesCollection.removeAll()
@@ -64,13 +73,15 @@ class HistoryViewController: UIViewController {
         }
     }
     
+    //MARK: - IBAction
+    
     
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         loadExpenses()
     }
-    
-
 }
+
+//MARK: - UITableViewDelegate & UITableViewDataSource 
 
 extension HistoryViewController: UITableViewDelegate,UITableViewDataSource {
     

@@ -14,6 +14,8 @@ class AddCategoryViewController: UIViewController {
     //MARK: - Core Data Persistent Container
        
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    
+    //MARK: - IBOutlets
 
     @IBOutlet weak var categoryNameTextField: UITextField!
     @IBOutlet weak var categoryLimitTextField: UITextField!
@@ -21,18 +23,22 @@ class AddCategoryViewController: UIViewController {
     @IBOutlet weak var usedLimitLabel: UILabel!
     @IBOutlet weak var freeLimitLabel: UILabel!
     
-    let categoryLimitTextFieldDelegate = DecimalTextFieldDelegate()
+    //MARK: - helper vars
     
+    let categoryLimitTextFieldDelegate = DecimalTextFieldDelegate()
+    // used to pass data using call back
     var addedCategory: ((_ category:Category?) -> ())?
+    
+    //MARK: - life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         categoryLimitTextField.delegate = categoryLimitTextFieldDelegate
         setUp()
-
-        // Do any additional setup after loading the view.
     }
+    
+    //MARK: - setup func
     
     func setUp () {
         let income = Income.loadIncomes(container: container)
@@ -43,6 +49,8 @@ class AddCategoryViewController: UIViewController {
         freeLimitLabel.text = "Free limit : \(freeLimit) SAR"
         
     }
+    
+    //MARK: - IBActions
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         guard let name = categoryNameTextField.text else { return }
@@ -56,15 +64,5 @@ class AddCategoryViewController: UIViewController {
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

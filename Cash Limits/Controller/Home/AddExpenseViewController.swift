@@ -12,33 +12,40 @@ import CoreData
 class AddExpenseViewController: UIViewController {
     
     //MARK: - Core Data Persistent Container
-        
+    
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    
+    //MARK: - IBOutlets
     
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var currencySegmentedControl: UISegmentedControl!
     
+    //MARK: - helper vars
+    
     let amountTextFieldDelgate = DecimalTextFieldDelegate()
-    
-     var addedExpense: (() -> ())?
-    
+    // used to pass data using call back
+    var addedExpense: (() -> ())?
     static var categoryName:String = ""
-
+    
+    //MARK: - life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         categoryLabel.layer.cornerRadius = 15
         categoryLabel.layer.masksToBounds = true
         
         amountTextField.delegate = amountTextFieldDelgate
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         categoryLabel.text = AddExpenseViewController.categoryName
     }
+    
+    //MARK: - IBActions
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         guard let amountString = amountTextField.text else { return }
@@ -47,8 +54,10 @@ class AddExpenseViewController: UIViewController {
         case 0:
             break
         case 1:
+            //convert to SAR from USD
             amountDouble = amountDouble * UserDefaults.standard.double(forKey: "usdRate")
         case 2:
+            //convert to SAR from EUR
             amountDouble = amountDouble * UserDefaults.standard.double(forKey: "eurRate")
         default:
             break
@@ -62,14 +71,5 @@ class AddExpenseViewController: UIViewController {
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

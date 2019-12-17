@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Graphs View Controller-->
+        <!--Graphs-->
         <scene sceneID="xko-Uu-vZ7">
             <objects>
                 <viewController id="aSd-gF-u9b" customClass="GraphsViewController" customModule="Cash_Limits" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="50H-qv-4X4"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lrW-rE-7wE"/>
+                    <navigationItem key="navigationItem" title="Graphs" id="lrW-rE-7wE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6Y-yK-wG3" sceneMemberID="firstResponder"/>
             </objects>

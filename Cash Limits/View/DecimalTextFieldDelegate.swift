@@ -10,6 +10,7 @@ import UIKit
 
 class DecimalTextFieldDelegate: NSObject , UITextFieldDelegate {
 
+    // make sure only 2 decimal numbers 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let oldText = textField.text, let r = Range(range, in: oldText) else {
             return true

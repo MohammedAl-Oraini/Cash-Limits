@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--App Name-->
+        <!--Cash Limits-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="HomeViewController" customModule="Cash_Limits" customModuleProvider="target" sceneMemberID="viewController">
@@ -201,7 +201,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <navigationItem key="navigationItem" title="App Name" id="LBe-vv-hes">
+                    <navigationItem key="navigationItem" title="Cash Limits" id="LBe-vv-hes">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5aO-7m-ZcW">
                             <connections>
                                 <segue destination="YVU-0H-1IL" kind="popoverPresentation" identifier="addCategorySegue" popoverAnchorBarButtonItem="5aO-7m-ZcW" id="XRs-fL-imo">

@@ -10,6 +10,8 @@ import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     
+    //MARK: - IBOutlets
+    
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var customProgressView: CustomProgressView!
     @IBOutlet weak var percentageLabel: UILabel!
@@ -18,21 +20,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addExpenseButton: UIButton!
     @IBOutlet weak var cellView: UIView!
     
+    //MARK: - cell delegate
+    
     weak var delegate: CategoryCollectionViewCellDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame )
-        
-        //Constructing views
-//        constructViews()
-        
-        //Adding a Long press event to the container view
-//        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
-//        lpgr.minimumPressDuration = 0.08
-//        lpgr.delaysTouchesBegan = false
-//        contentView.addGestureRecognizer(lpgr)
-        //addGestureRecognizer(lpgr)
-        
         
     }
     
@@ -49,12 +42,17 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        //fatalError("init(coder:) has not been implemented")
     }
+    
+    //MARK: - IBAction
+    
     @IBAction func addButtonTapped(_ sender: UIButton) {
         print("button Tapped")
         delegate?.didTapAddExpence(name: categoryName.text!)
     }
+    
+    //MARK: - setup func
+    
     func setupCell() {
         layer.cornerRadius = 15
         layer.borderWidth = 1

@@ -9,6 +9,8 @@
 import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
+    
+    //MARK: - IBOutlets
 
     @IBOutlet weak var expenseAmount: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -20,13 +22,10 @@ class HistoryTableViewCell: UITableViewCell {
         super.awakeFromNib()
         categoryLabel.layer.cornerRadius = 15
         categoryLabel.layer.masksToBounds = true
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

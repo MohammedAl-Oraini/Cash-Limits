@@ -15,13 +15,19 @@ class Page2ViewController: UIViewController {
     //MARK: - Core Data Persistent Container
      
      var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    
+    //MARK: - IBOutlet
 
     @IBOutlet weak var barChart: BarChartView!
+    
+    //MARK: - data source
     
     var dataEntryArry = [BarChartDataEntry]()
     var dateArray = [Date]()
     var spentArry = [Double]()
     let dateString = ["1","2","3","4","5","6","7"]
+    
+    //MARK: - life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +43,15 @@ class Page2ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         loadDates()
         loadSpent()
         loadDataEntries()
         setChart(dataPoints: dateString, values: spentArry)
         
     }
+    
+    //MARK: - load funcs
     
     func loadDataEntries() {
         dataEntryArry.removeAll()
@@ -91,15 +100,5 @@ class Page2ViewController: UIViewController {
          let chartData = BarChartData(dataSet: chartDataSet)
          barChart.data = chartData
      }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -19,13 +19,6 @@ class CustomProgressView : UIProgressView {
         maskLayer.frame = self.bounds
         maskLayer.path = maskLayerPath.cgPath
         layer.mask = maskLayer
-//        if progress > 0.5 && progress < 0.75 {
-//            progressTintColor = .orange
-//        }
-//        if progress >= 0.75 {
-//            progressTintColor = .red
-//        }
-        
     }
     
 }
