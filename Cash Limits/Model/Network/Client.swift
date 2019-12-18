@@ -12,7 +12,7 @@ class NetworkClient {
     
     //MARK: - api key
     
-    static let apiKey = "66c2e15299f8b14b66e45e6cd56b75b6"
+    static let apiKey = "ENTER Fixer API KEY HERE"
     
     //MARK: - network method
     
