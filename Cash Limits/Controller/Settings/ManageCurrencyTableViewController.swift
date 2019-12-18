@@ -15,6 +15,7 @@ class ManageCurrencyTableViewController: UITableViewController {
     @IBOutlet weak var updateBarButton: UIBarButtonItem!
     @IBOutlet weak var usdRateLabel: UILabel!
     @IBOutlet weak var eurRateLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - life cycle
     
@@ -29,6 +30,7 @@ class ManageCurrencyTableViewController: UITableViewController {
 
     @IBAction func updateButtonTapped(_ sender: UIBarButtonItem) {
         updateBarButton.isEnabled = false
+        activityIndicator.startAnimating()
         NetworkClient.getExchangeRate(completion: handleExchangeRate(exchangeRate:error:))
     }
     
@@ -46,11 +48,13 @@ class ManageCurrencyTableViewController: UITableViewController {
             UserDefaults.standard.set(usdRateRounded, forKey: "usdRate")
             DispatchQueue.main.async {
                 self.updateBarButton.isEnabled = true
+                self.activityIndicator.stopAnimating()
                 self.usdRateLabel.text = "\(UserDefaults.standard.double(forKey: "usdRate"))"
                 self.eurRateLabel.text = "\(UserDefaults.standard.double(forKey: "eurRate"))"
             }
         } else {
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 self.showMessageFailure(message: "Try again later !")
             }
         }

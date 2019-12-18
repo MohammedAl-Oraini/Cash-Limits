@@ -93,15 +93,19 @@
         <scene sceneID="IDh-X3-7oa">
             <objects>
                 <tableViewController id="QOa-KN-LPB" customClass="ManageCurrencyTableViewController" customModule="Cash_Limits" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="2cc-Su-cdV">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="2cc-Su-cdV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <activityIndicatorView key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="Ua3-q4-aWs">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <sections>
                             <tableViewSection headerTitle="Default Currency" id="gXS-Yl-aea">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Yuf-Le-BT4" detailTextLabel="a4Z-Wb-XHR" style="IBUITableViewCellStyleValue1" id="FQk-G1-sYp">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FQk-G1-sYp" id="5Q2-ak-0SX">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -129,7 +133,7 @@
                             <tableViewSection headerTitle="Other Currencies" footerTitle="Exchange Rate Value To Default Currency" id="Xfl-w6-T88">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="eDi-jZ-XBP" detailTextLabel="VHK-ep-Gpb" style="IBUITableViewCellStyleValue1" id="sGm-nu-2Hu">
-                                        <rect key="frame" x="0.0" y="162.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="206.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sGm-nu-2Hu" id="wDY-Ue-hTi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -153,7 +157,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Fpb-bx-lae" detailTextLabel="aHg-gP-K6I" style="IBUITableViewCellStyleValue1" id="xsi-WI-lxg">
-                                        <rect key="frame" x="0.0" y="206" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="250" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xsi-WI-lxg" id="K8R-oa-c06">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -192,6 +196,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="Ua3-q4-aWs" id="CxN-tp-CX7"/>
                         <outlet property="eurRateLabel" destination="aHg-gP-K6I" id="tmw-vt-Ulv"/>
                         <outlet property="updateBarButton" destination="kGx-Eg-q6v" id="Y0s-gm-1b3"/>
                         <outlet property="usdRateLabel" destination="VHK-ep-Gpb" id="78K-HV-62p"/>
