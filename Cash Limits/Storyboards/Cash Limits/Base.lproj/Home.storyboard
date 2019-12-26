@@ -92,6 +92,13 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
+                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the income button to add your monthly income and the &quot;+&quot; button to add a new spending category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iCa-Dn-kbR">
+                                    <rect key="frame" x="0.0" y="0.0" width="398" height="683.5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="TwD-eO-cgR" customClass="CategoryCollectionViewCell" customModule="Cash_Limits" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="171" height="171"/>
@@ -214,6 +221,7 @@
                         <outlet property="balanceButton" destination="d8W-dd-AR8" id="3NA-Fv-GQj"/>
                         <outlet property="categoryCollectionView" destination="IwZ-4p-gza" id="JDE-aC-Jei"/>
                         <outlet property="flowLayout" destination="lXQ-o4-gBq" id="aOz-h1-PBG"/>
+                        <outlet property="helpLabel" destination="iCa-Dn-kbR" id="BkR-uD-Ix2"/>
                         <outlet property="incomeButton" destination="8iv-ow-BmS" id="bCf-VU-Wa8"/>
                         <outlet property="spentButton" destination="W42-qh-wU5" id="UFB-0Z-Jtx"/>
                         <segue destination="bb3-a4-sSe" kind="presentation" identifier="addExpenseSegueIdentifier" id="u51-pl-MKM"/>

@@ -24,10 +24,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var incomeButton: UIButton!
     @IBOutlet weak var spentButton: UIButton!
     @IBOutlet weak var balanceButton: UIButton!
+    @IBOutlet weak var helpLabel: UILabel!
     
     //MARK: - data source
     
-    var categoryCollection:[Category] = []
+    var categoryCollection:[Category] = [] {
+        didSet {
+            if categoryCollection.count == 0 {
+                helpLabel.isHidden = false
+            } else {
+                helpLabel.isHidden = true
+            }
+        }
+    }
     
     //MARK: - life cycle
     

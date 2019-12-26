@@ -62,7 +62,8 @@ class AddExpenseViewController: UIViewController {
         default:
             break
         }
-        let amount = Decimal(amountDouble)
+        let amountRounded = Double(round(100*amountDouble)/100)
+        let amount = Decimal(amountRounded)
         Expense.addExpense(container: container, name: categoryLabel.text!, amount: amount)
         addedExpense?()
         dismiss(animated: true, completion: nil)
