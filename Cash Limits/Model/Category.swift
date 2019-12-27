@@ -80,5 +80,21 @@ class Category: NSManagedObject {
         print("returned with an emity arry")
         return 0
     }
+    
+    class func resetCategory(container: NSPersistentContainer?){
+        if let container = container {
+            let request: NSFetchRequest<Category> = Category.fetchRequest()
+            do {
+                let categorys = try container.viewContext.fetch(request)
+                print("Catagories loaded with :\(categorys.count) Category")
+                for category in categorys {
+                    container.viewContext.delete(category)
+                }
+            } catch {
+               print("error loading the Category")
+            }
+        }
+        print("returned with an emity arry")
+    }
 
 }

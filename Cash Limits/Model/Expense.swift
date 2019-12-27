@@ -129,4 +129,22 @@ class Expense: NSManagedObject {
         return 0
     }
     
+    class func resetExpense(container: NSPersistentContainer?){
+        if let container = container {
+            let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+            let sort = NSSortDescriptor(key: "date", ascending: false)
+            request.sortDescriptors = [sort]
+            do {
+                let expenses = try container.viewContext.fetch(request)
+                print("Expenses loaded with :\(expenses.count) expenses")
+                for expense in expenses {
+                    container.viewContext.delete(expense)
+                }
+            } catch {
+               print("error loading the expenses")
+            }
+        }
+        print("returned with an emity arry")
+    }
+    
 }

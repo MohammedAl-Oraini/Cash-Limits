@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,6 +74,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="aqC-ZM-5MJ" kind="show" id="E3z-oW-whk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="cBC-gH-Y3k" style="IBUITableViewCellStyleDefault" id="gEi-Yi-2DY">
+                                        <rect key="frame" x="20" y="105" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gEi-Yi-2DY" id="dvr-xd-3Iq">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Reset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cBC-gH-Y3k">
+                                                    <rect key="frame" x="20" y="0.0" width="315" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Oj6-fe-kov" kind="show" id="jTF-mw-HDc"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -205,6 +226,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CQ-R4-DCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3318" y="-611"/>
+        </scene>
+        <!--Reset View Controller-->
+        <scene sceneID="BjO-Nu-ga7">
+            <objects>
+                <viewController id="Oj6-fe-kov" customClass="ResetViewController" customModule="Cash_Limits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UTR-eD-0Ab">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="F3e-QQ-Pyq">
+                                <rect key="frame" x="16" y="108" width="382" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUP-Yv-dOb">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                        <state key="normal" title="Reset Income"/>
+                                        <connections>
+                                            <action selector="resetIncomeTapped:" destination="Oj6-fe-kov" eventType="touchUpInside" id="pgv-Hm-5dF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9l-qL-ITJ">
+                                        <rect key="frame" x="0.0" y="80" width="382" height="30"/>
+                                        <state key="normal" title="Reset Category"/>
+                                        <connections>
+                                            <action selector="resetCategoryTapped:" destination="Oj6-fe-kov" eventType="touchUpInside" id="HNc-kC-bG6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BM2-nM-vpl">
+                                        <rect key="frame" x="0.0" y="160" width="382" height="30"/>
+                                        <state key="normal" title="Reset Expense"/>
+                                        <connections>
+                                            <action selector="resetExpenseTapped:" destination="Oj6-fe-kov" eventType="touchUpInside" id="lio-JR-OQw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="F3e-QQ-Pyq" firstAttribute="top" secondItem="6Ck-mG-LIM" secondAttribute="top" constant="20" id="6bM-IG-TVR"/>
+                            <constraint firstItem="6Ck-mG-LIM" firstAttribute="trailing" secondItem="F3e-QQ-Pyq" secondAttribute="trailing" constant="16" id="d0I-3N-LBn"/>
+                            <constraint firstItem="F3e-QQ-Pyq" firstAttribute="leading" secondItem="6Ck-mG-LIM" secondAttribute="leading" constant="16" id="p58-Jg-z0z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Ck-mG-LIM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tFb-nX-KZx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7G-Pn-nqs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2383" y="335"/>
         </scene>
         <!--Manage Income Table View Controller-->
         <scene sceneID="3EO-gP-le2">
